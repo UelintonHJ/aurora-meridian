@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const navigationItems = [
+export const navigationItems = [
     { href: "#strategy", label: "Strategy" },
     { href: "#insights", label: "Insights" },
     { href: "#about", label: "About" },
@@ -19,7 +19,6 @@ export function Navigation() {
                                 "text-sm text-text-secondary",
                                 "transition-colors duration-200",
                                 "hover:text-text-primary",
-                                "focus-visible:outline-2 focus-visible:outline-offset-4",
                             ].join(" ")}
                         >
                         {item.label}
