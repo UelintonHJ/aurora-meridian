@@ -1,22 +1,22 @@
 :root {
     /* Color */
-    --color-background: #080a0d;
-    --color-surface: #101318;
-    --color-surface-elevated: #171b21;
+    --background: #080a0d;
+    --surface: #101318;
+    --surface-elevated: #171b21;
 
-    --color-text-primary: #f4f1ea;
-    --color-text-secondary: #a8adb5;
-    --color-text-muted: #737983;
+    --text-primary: #f4f1ea;
+    --text-secondary: #a8adb5;
+    --text-muted: #737983;
 
-    --color-border: #292e35;
-    --color-border-subtle: #1d2229;
+    --border: #292e35;
+    --border-subtle: #1d2229;
 
     --focus-color: #e4d2a6;
 
-    --color-accent-gold: #c8a96b;
-    --color-accent-light: #e4d2a6;
-    --color-signal: #d7ff63;
-    --color-danger: #d97979;
+    --accent-gold: #c8a96b;
+    --accent-light: #e4d2a6;
+    --signal: #d7ff63;
+    --danger: #d97979;
 
     /* Typography */
     --font-sans: var(--font-geist-sans);
@@ -116,21 +116,21 @@
 }
 
 @theme inline {
-    --color-background: var(--color-background);
-    --color-surface: var(--color-surface);
-    --color-surface-elevated: var(--color-surface-elevated);
+    --color-background: var(--background);
+    --color-surface: var(--surface);
+    --color-surface-elevated: var(--surface-elevated);
 
-    --color-text-primary: var(--color-text-primary);
-    --color-text-secondary: var(--color-text-secondary);
-    --color-text-muted: var(--color-text-muted);
+    --color-text-primary: var(--text-primary);
+    --color-text-secondary: var(--text-secondary);
+    --color-text-muted: var(--text-muted);
 
-    --color-border: var(--color-border);
-    --color-border-subtle: var(--color-border-subtle);
+    --color-border: var(--border);
+    --color-border-subtle: var(--border-subtle);
 
-    --color-accent-gold: var(--color-accent-gold);
-    --color-accent-light: var(--color-accent-light);
-    --color-signal: var(--color-signal);
-    --color-danger: var(--color-danger);
+    --color-accent-gold: var(--accent-gold);
+    --color-accent-light: var(--accent-light);
+    --color-signal: var(--signal);
+    --color-danger: var(--danger);
 
     --font-sans: var(--font-sans);
     --font-mono: var(--font-mono);
