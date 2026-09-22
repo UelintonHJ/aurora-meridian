@@ -1,12 +1,9 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { InstitutionalProof } from "@/components/InstitutionalProof";
+import { OpportunityMap } from "@/components/OpportunityMap";
 
 const sections = [
-  {
-    id: "strategy",
-    label: "Strategy",
-  },
   {
     id: "insights",
     label: "Insights",
@@ -34,6 +31,8 @@ export default function Home() {
         <Hero />
         
         <InstitutionalProof />
+
+        <OpportunityMap />
 
         {sections.map((section) => (
           <section

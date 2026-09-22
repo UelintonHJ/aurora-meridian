@@ -179,7 +179,7 @@ export function Header() {
                         aria-label="Aurora Meridian"
                         className={[
                             "flex shrink-0 items-center rounded-md",
-                            "bg-surface px-2",
+                            "px-2",
                         ].join(" ")}
                     >
                         <Image 
