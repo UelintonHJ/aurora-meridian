@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { Container } from "@/components/ui/Container";
-import { Metric } from "@/components/ui/Metric";
 
 function Radar() {
     return (
@@ -100,33 +99,6 @@ export function Hero() {
                         <Radar />
                     </div>
                 </div>
-
-                <div className="grid gap-8 border-t border-border py-8 sm:grid-cols-3 sm:gap-6">
-                    <Metric 
-                        value="+85K"
-                        label="Client relationships"
-                        detail="Illustrative case data"
-                    />
-
-                    <Metric
-                        value="R$57B+"
-                        label="Illustrative AUM"
-                        detail="Illustrative case data"
-                    />
-
-                    <Metric
-                        value="Brazil"
-                        label="Case presence"
-                        detail="Fictional institutional universe"
-                    />
-                </div>
-
-                <p className="pb-8 text-[0.6875rem] leading-relaxed text-text-muted">
-                    Fictional portfolio case. All institutional entities,
-                    figures and Investment information presented on this
-                    website are illustractive and create for educational
-                    purposes.
-                </p>
             </Container>
         </section>
     );

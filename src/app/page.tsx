@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { InstitutionalProof } from "@/components/InstitutionalProof";
 
 const sections = [
   {
@@ -31,6 +32,8 @@ export default function Home() {
 
       <main>
         <Hero />
+        
+        <InstitutionalProof />
 
         {sections.map((section) => (
           <section
