@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { InstitutionalProof } from "@/components/InstitutionalProof";
 import { OpportunityMap } from "@/components/OpportunityMap";
+import { FundShowcase } from "@/components/FundShowcase";
 
 const sections = [
   {
@@ -33,6 +34,8 @@ export default function Home() {
         <InstitutionalProof />
 
         <OpportunityMap />
+
+        <FundShowcase />
 
         {sections.map((section) => (
           <section
