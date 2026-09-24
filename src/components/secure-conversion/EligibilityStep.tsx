@@ -84,7 +84,14 @@ export function EligibilityStep({
                 </p>
             </div>
 
-            <fieldset className="space-y-4">
+            <fieldset 
+                className="space-y-4"
+                aria-describedby={
+                    errors.investorType
+                        ? "investor-type-error"
+                        : undefined
+                }
+            >
                 <legend className="text-sm font-medium text-text-primary">
                     Investor profile
                 </legend>
@@ -102,12 +109,6 @@ export function EligibilityStep({
                                 investorType: "",
                             }));
                         }}
-                        aria-invalid={Boolean(errors.investorType)}
-                        aria-describedby={
-                            errors.investorType
-                                ? "investor-type-error"
-                                : undefined
-                        }
                         className="mt-1 accent-(--color-accent-gold)"
                     />
 
@@ -134,12 +135,6 @@ export function EligibilityStep({
                                 investorType: "",
                             }));
                         }}
-                        aria-invalid={Boolean(errors.investorType)}
-                        aria-describedby={
-                            errors.investorType
-                                ? "investor-type-error"
-                                : undefined
-                        }
                         className="mt-1 accent-(--color-accent-gold)"
                     />
 

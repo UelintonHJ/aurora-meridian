@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useEffect, useRef, useState } from "react";
 
 import { Container } from "@/components/ui/Container";
@@ -122,12 +124,12 @@ export function AccessFlow() {
             <Container>
                 <div className="flex min-h-svh flex-col py-6 sm:py-8 lg:py-10">
                     <header className="flex items-center justify-between gap-6">
-                        <a
+                        <Link
                             href="/"
                             className="rounded-md text-sm font-medium tracking-wide text-text-primary focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--focus-color)"
                         >
                             Aurora Meridian
-                        </a>
+                        </Link>
 
                         <span className="font-mono text-[0.625rem] uppercase tracking-wider text-text-muted">
                             Portfolio case

@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { InstitutionalProof } from "@/components/InstitutionalProof";
 import { OpportunityMap } from "@/components/OpportunityMap";
 import { FundShowcase } from "@/components/FundShowcase";
+import { BookExperience } from "@/components/BookExperience";
 
 const sections = [
   {
@@ -36,6 +37,8 @@ export default function Home() {
         <OpportunityMap />
 
         <FundShowcase />
+
+        <BookExperience />
 
         {sections.map((section) => (
           <section
