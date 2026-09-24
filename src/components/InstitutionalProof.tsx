@@ -46,36 +46,6 @@ export function InstitutionalProof() {
                     </div>
                 </div>
 
-                <div className="grid border-b border-border sm:grid-cols-2">
-                    <div className="border-b border-border py-8 sm:border-b-0 sm:border-r sm:pr-8 lg:py-10">
-                        <p className="font-mono text-[0.6875rem] uppercase tracking-wider text-text-muted">
-                            01
-                        </p>
-
-                        <h3 className="mt-4 text-xl font-medium text-text-primary">
-                            Cultura
-                        </h3>
-
-                        <p className="mt-3 max-w-md text-sm leading-relaxed text-text-secondary">
-                            Relações construídas também através de experiências culturais e encontros institucionais.
-                        </p>
-                    </div>
-
-                    <div className="py-8 sm:pl-8 lg:py-10">
-                        <p className="font-mono text-[0.6875rem] uppercase tracking-wider text-text-muted">
-                            02
-                        </p>
-
-                        <h3 className="mt-4 text-xl font-medium text-text-primary">
-                            Esporte
-                        </h3>
-
-                        <p className="mt-3 max-w-md text-sm leading-relaxed text-text-secondary">
-                            Um universo de relacionamento que amplia a presença da marca para além do mercado financeiro.
-                        </p>
-                    </div>
-                </div>
-
                 <p className="max-w-3xl text-[0.6875rem] leading-relaxed text-text-muted">
                     Dados institucionais e elementos de relacionamento apresentados nesta seção são ilustrativos e foram criados exclusivamente para este case de portfólio.
                 </p>

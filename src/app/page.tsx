@@ -4,6 +4,7 @@ import { InstitutionalProof } from "@/components/InstitutionalProof";
 import { OpportunityMap } from "@/components/OpportunityMap";
 import { FundShowcase } from "@/components/FundShowcase";
 import { BookExperience } from "@/components/BookExperience";
+import { CultureSports } from "@/components/CultureSports";
 
 const sections = [
   {
@@ -39,6 +40,8 @@ export default function Home() {
         <FundShowcase />
 
         <BookExperience />
+
+        <CultureSports />
 
         {sections.map((section) => (
           <section
