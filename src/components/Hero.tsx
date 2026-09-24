@@ -76,7 +76,7 @@ export function Hero() {
                         </p>
 
                         <Link
-                            href="#opportunity"
+                            href="/opportunity/access"
                             className={[
                                 "mt-8 inline-flex min-h-12 items-center justify-center",
                                 "rounded-md bg-accent-gold px-6",

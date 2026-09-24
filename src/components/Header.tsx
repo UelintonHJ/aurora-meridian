@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { navigationItems } from "@/components/ui/Navigation";
 
-const CTA_HREF = "#opportunity";
+const CTA_HREF = "/opportunity/access";
 
 function MenuIcon({ open }: { open: boolean }) {
     return (
