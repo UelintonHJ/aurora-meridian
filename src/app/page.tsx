@@ -5,6 +5,8 @@ import { OpportunityMap } from "@/components/OpportunityMap";
 import { FundShowcase } from "@/components/FundShowcase";
 import { BookExperience } from "@/components/BookExperience";
 import { CultureSports } from "@/components/CultureSports";
+import { FAQ } from "@/components/FAQ";
+import { RiskDisclosure } from "@/components/RiskDisclosure";
 
 const sections = [
   {
@@ -42,6 +44,10 @@ export default function Home() {
         <BookExperience />
 
         <CultureSports />
+
+        <FAQ />
+
+        <RiskDisclosure />
 
         {sections.map((section) => (
           <section
