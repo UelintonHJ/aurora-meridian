@@ -187,6 +187,7 @@ export function Header() {
                             alt="Aurora Meridian"
                             width={641}
                             height={402}
+                            sizes="6.5rem"
                             className="h-16 w-auto object-contain"
                         />
                     </Link>
