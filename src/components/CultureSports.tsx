@@ -62,7 +62,7 @@ export function CultureSports() {
                     </div>
                 </div>
 
-                <div className="grid gap-16 lg:grid-cols-2 lg:gap-10">
+                <div className="grid gap-12 lg:grid-cols-2 lg:gap-10">
                     {experiences.map((experience) => (
                         <article
                             key={experience.label}
@@ -78,13 +78,13 @@ export function CultureSports() {
                                 </p>
                             </div>
 
-                            <div className="relative mt-6 aspect-4/5 overflow-hidden bg-surface">
+                            <div className="relative mt-6 aspect-video overflow-hidden bg-surface">
                                 <Image 
                                     src={experience.image.src}
                                     alt={experience.image.alt}
                                     fill
-                                    sizes="(min-width: 1024) 50vw, 100vw"
-                                    className="object-cover transition-transform duration-(--duration-slower) ease-(--ease-standar) motion-safe:group-hover:scale-[1.02]"
+                                    sizes="(min-width: 1024px) 50vw, 100vw"
+                                    className="object-cover transition-transform duration-(--duration-slower) ease-(--ease-standard) motion-safe:group-hover:scale-[1.02]"
                                 />
                             </div>
 

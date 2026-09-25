@@ -81,17 +81,17 @@ export function FAQ() {
                         >
                             <summary
                                 className={[
-                                    "flex cursor-pointer list-none items-center justify-between gap-6",
+                                    "flex cursor-pointer list-none items-center justify-between gap-4",
                                     "py-6 text-left",
                                     "text-base font-medium text-text-primary",
                                     "marker:hidden",
                                     "focus-visible:outline-2 focus-visible:outline-offset-4",
                                     "focus-visible:outline-(--focus-color)",
-                                    "sm:py-7 sm:text-lg",
+                                    "sm:gap-6 sm:py-7 sm:text-lg",
                                 ].join(" ")}
                             >
-                                <span>
-                                    <span className="mr-4 font-mono text-[0.625rem] uppercase tracking-wider text-text-muted">
+                                <span className="min-w-0 flex-1">
+                                    <span className="mr-3 whitespace-nowrap font-mono text-[0.625rem] uppercase tracking-wider text-text-muted sm:mr-4">
                                         {String(index + 1).padStart(2, "0")}
                                     </span>
 

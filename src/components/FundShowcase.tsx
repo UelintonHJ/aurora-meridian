@@ -65,7 +65,7 @@ export function FundShowcase() {
                         Fund information
                     </p>
 
-                    <div className="mt-6 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="mt-6 grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
                         {fundFacts.map((fact) => (
                             <div
                                 key={fact.label}

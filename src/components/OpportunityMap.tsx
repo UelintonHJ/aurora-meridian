@@ -47,7 +47,7 @@ export function OpportunityMap() {
             aria-labelledby="opportunity-map-title"
             className="overflow-hidden border-t border-border"
         >
-            <div className="grid gap-6 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-center lg:gap-20">
+            <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-20">
                 <div className="relative z-10 max-w-2xl">
                     <p className="text-xs font-medium uppercase tracking-wider text-accent-gold">
                         Opportunity thesis
@@ -102,7 +102,7 @@ export function OpportunityMap() {
 
                 <div
                     ref={radarRef}
-                    className="relative mx-auto w-full max-w-3xl"
+                    className="relative mx-auto w-full max-w-3xl md:self-center"
                 >
                     <div className="relative aspect-square" aria-hidden="true">
                         <div className="absolute inset-[5%] rounded-full border border-border/70" />

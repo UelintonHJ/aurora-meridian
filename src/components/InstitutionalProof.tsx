@@ -9,7 +9,7 @@ export function InstitutionalProof() {
             className="border-t border-border"
         >
             <div className="space-y-12">
-                <div className="grid gap-6 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-16">
+                <div className="grid gap-6 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:gap-10 lg:gap-16">
                     <div>
                         <p className="text-xs font-medium uppercase tracking-wider text-accent-gold">
                             Institutional proof

@@ -191,7 +191,7 @@ export function Header() {
                         />
                     </Link>
 
-                    <div className="hidden items-center gap-8 lg:flex">
+                    <div className="hidden items-center gap-8 xl:flex">
                         <nav aria-label="Main navigation">
                             <ul className="flex items-center gap-6">
                                 {navigationItems.map((item) => (
@@ -225,7 +225,7 @@ export function Header() {
                         </Link>
                     </div>
 
-                    <div className="flex items-center gap-2 lg:hidden">
+                    <div className="flex items-center gap-2 xl:hidden">
                         <Link
                             href={CTA_HREF}
                             className={[
@@ -272,7 +272,7 @@ export function Header() {
                 hidden={!menuOpen}
                 className={[
                     "border-t border-border bg-background",
-                    "lg:hidden",
+                    "xl:hidden",
                 ].join(" ")}
             >
                 <Container>

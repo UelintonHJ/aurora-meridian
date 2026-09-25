@@ -6,7 +6,7 @@ function Radar() {
     return (
         <div
             aria-hidden="true"
-            className="relative aspect-square w-full max-w-136"
+            className="relative aspect-square w-full max-w-122 sm:max-w-120 md:max-w-lg lg:max-w-136"
         >
             <div className="absolute inset-[8%] rounded-full border border-border/70" />
             <div className="absolute inset-[23%] rounded-full border border-border/60" />
@@ -49,7 +49,7 @@ export function Hero() {
             />
 
             <Container>
-                <div className="grid min-h-[calc(100svh-5rem)] items-center gap-12 py-16 md:py-20 lg:grid-cols-[minmax(0,1.05fr)_minmax(22rem,0.095fr)] lg:gap-8 lg:py-24">
+                <div className="grid min-h-[calc(100svh-5rem)] items-center gap-12 py-16 md:py-20 lg:grid-cols-[minmax(0,1.1fr)_minmax(18rem,0.9fr)] lg:gap-8 lg:py-24">
                     <div className="relative z-(--z-content) max-w-3xl">
                         <p className="mb-5 text-xs font-medium uppercase tracking-wider text-accent-gold">
                             Aurora Meridian — Investment Management
@@ -61,7 +61,7 @@ export function Hero() {
 
                         <h1
                             id="hero-title"
-                            className="max-w-4xl text-6xl font-medium leading-[0.9] tracking-tight text-text-primary sm:text-7xl lg:text-[7.5rem]"
+                            className="max-w-4xl text-[clamp(3.5rem,8vw,7.5rem)] font-medium leading-[0.9] tracking-tight text-text-primary"
                         >
                             Beyond the{" "}
                             <span className="font-display font-medium italic">
