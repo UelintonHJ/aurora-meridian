@@ -228,6 +228,7 @@ export function RegistrationStep({
                             )
                         }
                         required
+                        aria-invalid={Boolean(errors.privacyAcknowledged)}
                         aria-describedby={
                             errors.privacyAcknowledged
                                 ? "privacy-error"

@@ -11,7 +11,7 @@ const experiences = [
             "Arte, pensamento e encontro fazem parte de uma visão institucional que reconhece valor também nas relações construídas fora do ambiente financeiro.",
         image: {
             src: "/images/culture.jpeg",
-            alt: "Descrição editorial da fotografia cultural.",
+            alt: "Quatro pessoas em frente a uma pintura artística abstrata exposta em um museu, com outras obras visíveis pelos corredores",
         }
     },
     {
@@ -22,7 +22,7 @@ const experiences = [
             "Competição, preparação e horizonte de longo prazo criam pontos de contato com uma cultura orientada por disciplina e relacionamento.",
         image: {
             src: "/images/sport.jpeg",
-            alt: "Descrição editorial da fotografia esportiva.",
+            alt: "Três pessoas em um barco a vela em uma baía, preparando-se para velejar.",
         },
     },
 ];

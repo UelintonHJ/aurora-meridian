@@ -13,6 +13,7 @@
 html {
   background: var(--color-background);
   color-scheme: dark;
+  scroll-padding-top: 5rem;
 }
 
 body {

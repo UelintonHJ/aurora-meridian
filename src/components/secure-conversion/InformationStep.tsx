@@ -123,6 +123,10 @@ export function InformationStep({
                             setUnderstood(event.target.checked);
                             setError("");
                         }}
+                        aria-invalid={Boolean(error)}
+                        aria-describedby={
+                            error ? "information-error" : undefined
+                        }
                         className="mt-1 size-4 accent-(--color-accent-gold)"
                     />
 
@@ -134,6 +138,7 @@ export function InformationStep({
 
                 {error ? (
                     <p
+                        id="information-error"
                         role="alert"
                         className="mt-2 text-sm text-danger"
                     >

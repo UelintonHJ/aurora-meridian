@@ -86,6 +86,7 @@ export function EligibilityStep({
 
             <fieldset 
                 className="space-y-4"
+                aria-invalid={Boolean(errors.investorType)}
                 aria-describedby={
                     errors.investorType
                         ? "investor-type-error"

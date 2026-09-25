@@ -11,7 +11,6 @@ export function LegalNotice({
 }: LegalNoticeProps) {
     return (
         <aside
-            role="note"
             className={[
                 "border border-border-subtle bg-surface px-5 py-4",
                 "text-xs leading-relaxed text-text-muted",

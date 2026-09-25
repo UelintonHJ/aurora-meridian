@@ -266,9 +266,6 @@ export function Header() {
             <div
                 id="mobile-navigation"
                 ref={menuRef}
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="mobile-navigation-title"
                 hidden={!menuOpen}
                 className={[
                     "border-t border-border bg-background",
@@ -277,13 +274,6 @@ export function Header() {
             >
                 <Container>
                     <div className="flex min-h-[calc(100svh-5rem)] flex-col py-8">
-                        <h2
-                            id="mobile-navigation-title"
-                            className="sr-only"
-                        >
-                            Main navigation
-                        </h2>
-
                         <nav aria-label="Mobile navigation">
                             <ul className="divide-y divide-border">
                                 {navigationItems.map((item) => (
