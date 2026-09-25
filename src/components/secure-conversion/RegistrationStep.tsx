@@ -18,6 +18,9 @@ type RegistrationErrors = {
     privacyAcknowledged?: string;
 };
 
+const MAX_NAME_LENGTH = 100;
+const MAX_EMAIL_LENGTH = 254;
+
 export function RegistrationStep({
     data,
     onContinue,
@@ -28,7 +31,6 @@ export function RegistrationStep({
         name: data.name,
         email: data.email,
         privacyAcknowledged: data.privacyAcknowledged,
-        communicationsConsent: data.communicationsConsent,
     });
 
     const [errors, setErrors] = useState<RegistrationErrors>({});
@@ -51,15 +53,48 @@ export function RegistrationStep({
     const validate = () => {
         const nextErrors: RegistrationErrors = {};
 
-        if (!formData.name.trim()) {
-            nextErrors.name = "Please enter your name.";
+        const normalizedName = formData.name
+            .trim()
+            .replace(/\s+/g, " ");
+
+        const normalizedEmail =
+            formData.email.trim();
+
+        if (!normalizedName) {
+            nextErrors.name =
+                "Please enter your name.";
+        } else if (
+            normalizedName.length < 2
+        ) {
+            nextErrors.name =
+                "Please enter at least 2 characters."
+        } else if (
+            normalizedName.length >
+            MAX_NAME_LENGTH
+        ) {
+            nextErrors.name =
+                `Please use no more than ${MAX_NAME_LENGTH} characters.`;
+        } else if (
+            /[\u0000-\u001F\u007F]/.test(
+                normalizedName,
+            )
+        ) {
+            nextErrors.name = 
+                "Please remove unsupported control characters.";
         }
 
-        if (!formData.email.trim()) {
-            nextErrors.email = "Please enter your email address.";
+        if(!normalizedEmail) {
+            nextErrors.email =
+                "Please enter your email address.";
+        } else if (
+            normalizedEmail.length >
+            MAX_EMAIL_LENGTH
+        ) {
+            nextErrors.email =
+                "Please enter a valid email address.";
         } else if (
             !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
-                formData.email.trim(),
+                normalizedEmail,
             )
         ) {
             nextErrors.email =
@@ -85,12 +120,10 @@ export function RegistrationStep({
 
         onContinue({
             ...data,
-            name: formData.name.trim(),
+            name: formData.name.trim().replace(/\s+/g, " "),
             email: formData.email.trim(),
             privacyAcknowledged:
                 formData.privacyAcknowledged,
-            communicationsConsent:
-                formData.communicationsConsent,
         });
     };
 
@@ -133,6 +166,8 @@ export function RegistrationStep({
                         name="name"
                         type="text"
                         autoComplete="name"
+                        autoCapitalize="words"
+                        maxLength={MAX_NAME_LENGTH}
                         required
                         value={formData.name}
                         onChange={(event) =>
@@ -179,6 +214,8 @@ export function RegistrationStep({
                         type="email"
                         autoComplete="email"
                         inputMode="email"
+                        maxLength={MAX_EMAIL_LENGTH}
+                        spellCheck={false}
                         required
                         value={formData.email}
                         onChange={(event) =>
@@ -248,25 +285,6 @@ export function RegistrationStep({
                     id="privacy-error"
                     message={errors.privacyAcknowledged}
                 />
-
-                <label className="flex gap-3">
-                    <input 
-                        type="checkbox"
-                        checked={formData.communicationsConsent}
-                        onChange={(event) => 
-                            updateField(
-                                "communicationsConsent",
-                                event.target.checked,
-                            )
-                        }
-                        className="mt-1 size-4 accent-(--color-accent-gold)"
-                    />
-
-                    <span className="text-sm leading-relaxed text-text-secondary">
-                        I would like to receive future educational
-                        communications about the fictional case.
-                    </span>
-                </label>
             </fieldset>
 
             <div className="flex justify-end">

@@ -4,32 +4,37 @@ const faqItems = [
     {
         question: "O que é o Atlas Credit Opportunity Fund?",
         answer:
-            "Dentro deste case conceitual, o Atlas Credit Opportunity Fund representa uma estratégia fictícia de crédito privado orientada à análise de oportunidades estruturadas. As características apresentadas no protótipo são ilustrativas e não representam um fundo real.",
+            "O Atlas Credit Opportunity Fund é uma entidade fictícia criada para representar, neste case, uma estratégia conceitual de crédito privado. Não existe um fundo real sendo oferecido por este projeto.",
     },
     {
         question: "Quem pode acessar a oportunidade?",
         answer:
-            "O universo conceitual do projeto foi desenhado para investidores qualificados e sofisticados. Essa definição é parte da premissa do case e não representa uma oferta ou processo real de elegibilidade.",
+            "O universo narrativo do case considera um público conceitual de investidores qualificados e sofisticados. Essa classificação é uma premissa de design e não representa uma verificação real de elegibilidade, qualificação ou suitability.",
     },
     {
         question: "O retorno é garantido?",
         answer:
-            "Não. O objetivo do retorno apresentado no case é hipotético e não representa promessa, garantia ou expectativa de rentabilidade futura.",
+            "Não. Qualquer objetivo ou retorno ilustrativo apresentado no universo do case é hipotético e não constitui promessa, garantia ou expectativa de rentabilidade futura.",
     },
     {
         question: "Existe possibilidade de perda de capital?",
         answer:
-            "Sim. O conceito do produto considera riscos associados a crédito, liquidez, estrutura das operações e outros fatores. A apresentação de qualquer oportunidade de investimento deve considerar os riscos antes de uma eventual decisão.",
+            "O conceito do produto considera riscos de crédito, liquidez, estrutura e perda de capital. As informações são ilustrativas e não representam uma avaliação real de risco de um produto financeiro.",
     },
     {
         question: "O investimento possui cobertura do FGC?",
         answer: 
-            "Não há cobertura do FGC prevista na estrutura conceitual apresentada neste case. A informação é uma premissa fictícia do projeto e não deve ser interpretada como característica de um produto financeiro real.",
+            "A estrutura conceitual do case considera ausência de cobertura pelo FGC. Essa informação é uma premissa fictícia e não deve ser interpretada como característica de um produto financeiro real.",
     },
     {
         question: "Qual é o horizonte da estratégia?",
         answer:
             "O case utiliza um horizonte conceitual de longo prazo. Qualquer prazo, período de extensão ou condição de liquidez apresentado no protótipo deve ser considerado ilustrativo.",
+    },
+    {
+        question: "Como funciona o suitability?",
+        answer:
+            "O fluxo apresentado no protótipo não realiza suitability. As perguntas da experiência são apenas ilustrativas. Uma avaliação real de adequação depende do processo, das informações e das responsabilidades aplicáveis às instituições envolvidas.",
     },
     {
         question: "Onde posso consultar o material técnico?",
@@ -39,7 +44,7 @@ const faqItems = [
     {
         question: "Como acessar o livro?",
         answer:
-            "O protótipo representa uma jornada de acesso condicionada à autorização para distribuição do conteúdo. Nenhuma cópia não autorizada do livro é disponibilizada por este projeto.",
+            "O livro apresentado na experiência é uma referência editorial real. O protótipo não disponibiliza cópia ou download da obra e não presume autorização para sua distribuição.",
     },
 ];
 

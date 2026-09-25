@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import { Section } from "@/components/ui/Section";
 
 export function BookExperience() {
@@ -13,7 +11,7 @@ export function BookExperience() {
                 <div className="mx-auto w-full max-w-sm lg:mx-0">
                     <div
                         className="relative aspect-3/4 overflow-hidden border border-border bg-surface p-6 shadow-lg"
-                        aria-label="Representação editorial do livro O Mais Importante para o Investidor"
+                        aria-label="Representação editorial de uma referência bibliográfica de Howard Marks"
                     >
                         <div className="flex h-full flex-col justify-between border border-border-subtle p-6">
                             <div className="flex items-center justify-between gap-4">
@@ -73,35 +71,27 @@ export function BookExperience() {
                     </p>
 
                     <p className="mt-8 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
-                        Uma reflexão sobre pensamento de investimento,
-                        risco, ciclos de mercado e as decisões que
-                        exigem disciplina além do consenso.
+                        Referência editorial relacionada a pensamento de
+                        investimento, risco, ciclos de mercado e disciplina
+                        na tomada de decisões.
                     </p>
 
                     <p className="mt-5 max-w-2xl text-sm leading-relaxed text-text-muted">
-                        O acesso ao conteúdo depende de autorização
-                        jurídica para distribuição. Nenhum download é
-                        disponibilizado por este protótipo sem essa 
-                        autorização.
+                        Este projeto utiliza a obra apenas como referência
+                        editorial. Nenhuma cópia, representação ou download da
+                        obra é distribuído pelo protótipo.
                     </p>
 
-                    <Link
-                        href="/opportunity/access"
-                        className={[
-                            "mt-8 inline-flex min-h-11 items-center justify-center",
-                            "rounded-md bg-accent-gold px-5",
-                            "text-sm font-medium text-background",
-                            "transition-colors duration-200",
-                            "hover:bg-accent-light",
-                            "focus-visible:outline-2 focus-visible:outline-offset-3",
-                            "focus-visible:outline-(--focus-color)",
-                        ].join(" ")}
-                    >
-                        Consultar acesso
-                        <span aria-hidden="true" className="ml-2" >
-                            →
-                        </span>
-                    </Link>
+                    <div className="mt-8 border-l border-accent-gold pl-5">
+                        <p className="text-xs font-medium uppercase tracking-wider text-text-muted">
+                            Distribution status
+                        </p>
+
+                        <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+                            Conteúdo integral não autorizado para distribuição
+                            neste case.
+                        </p>
+                    </div>
                 </div>
             </div>
         </Section>

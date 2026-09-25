@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 
 import { cormorantGaramond, geistMono, geistSans } from "./fonts";
 import { siteConfig } from "@/lib/site";
@@ -26,6 +27,12 @@ const structuredData = {
     },
   ],
 };
+
+function serializeStructuredData(
+  data: typeof structuredData,
+) {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}
 
 export const metadata: Metadata = {
   metadataBase: siteConfig.url,
@@ -71,11 +78,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const nonce = 
+    (await headers()).get("x-nonce") ?? undefined;
+
   return (
     <html
       lang="en"
@@ -90,9 +100,13 @@ export default function RootLayout({
         {children}
 
         <script
+        nonce={nonce}
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData),
+            __html: 
+              serializeStructuredData(
+                structuredData,
+              ),
           }}
         />
       </body>

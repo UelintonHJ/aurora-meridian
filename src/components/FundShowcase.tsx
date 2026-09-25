@@ -3,27 +3,27 @@ import { Section } from "@/components/ui/Section"
 const fundFacts = [
     {
         label: "Público",
-        value: "A confirmar na documentação",
+        value: "Premissa ilustrativa do case",
     },
     {
         label: "Perfil",
-        value: "A confirmar na documentação",
+        value: "Premissa ilustrativa do case",
     },
     {
         label: "Prazo",
-        value: "A confirmar na documentação",
+        value: "Premissa ilustrativa do case",
     },
     {
         label: "Mínimo",
-        value: "A confirmar na documentação",
+        value: "Premissa ilustrativa do case",
     },
     {
         label: "Emissor",
-        value: "A confirmar na documentação",
+        value: "Atlas Securities — entidade fictícia",
     },
     {
         label: "Tributação",
-        value: "A confirmar na documentação",
+        value: "Conforme estrutura aplicável",
     },
 ];
 
@@ -51,18 +51,23 @@ export function FundShowcase() {
                             id="fund-showcase-title"
                             className="max-w-4xl text-5xl font-medium leading-[0.95] tracking-tight text-text-primary sm:text-6xl lg:text-7xl"
                         >
-                            Oaktree ABIF
+                            Atlas Credit Opportunity Fund
                         </h2>
 
                         <p className="mt-8 max-w-2xl font-display text-3xl italic leading-tight text-text-secondary sm:text-4xl">
-                            Dados do produto devem ser apresentados conforme a documentação oficial vigente.
+                            Estratégia fictícia de crédito privado criada exclusivamente para este case.
                         </p>
                     </div>
                 </div>
 
                 <div className="border-y border-border py-10">
                     <p className="text-xs font-medium uppercase tracking-wider text-text-muted">
-                        Fund information
+                        Illustrative fund information
+                    </p>
+
+                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-text-muted">
+                        Todas as características abaixo são primissas
+                        conceituais e não representam dados de um fundo real.
                     </p>
 
                     <div className="mt-6 grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
