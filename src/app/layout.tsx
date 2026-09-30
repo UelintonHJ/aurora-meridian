@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 
-import { cormorantGaramond, geistMono, geistSans } from "./fonts";
+import { rondelle, wulkanDisplay } from "./fonts";
 import { siteConfig } from "@/lib/site";
 import "@/styles/globals.css";
 
@@ -90,9 +90,8 @@ export default async function RootLayout({
     <html
       lang="en"
       className={[
-        geistSans.variable,
-        geistMono.variable,
-        cormorantGaramond.variable,
+        rondelle.variable,
+        wulkanDisplay,
         "h-full antialiased",
       ].join(" ")}
     >

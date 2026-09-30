@@ -13,14 +13,14 @@ export function LegalNotice({
         <aside
             className={[
                 "border border-border-subtle bg-surface px-5 py-4",
-                "text-xs leading-relaxed text-text-muted",
+                "text-xs leading-relaxed text-text-secondary",
                 className,
             ]
                 .filter(Boolean)
                 .join(" ")}
             {...props}
         >
-            <p className="mb-2 font-medium uppercase tracking-wider text-text-secondary">
+            <p className="mb-2 font-medium uppercase tracking-wider text-text-primary">
                 Aviso importante
             </p>
 

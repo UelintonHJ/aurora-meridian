@@ -12,8 +12,13 @@ const resolvedSiteUrl =
 
 const siteUrl = new URL(resolvedSiteUrl);
 
+const isLocalhost =
+    siteUrl.hostname === "localhost" ||
+    siteUrl.hostname === "127.0.0.1";
+
 if (
     process.env.NODE_ENV === "production" &&
+    !isLocalhost &&
     siteUrl.protocol !== "https:"
 ) {
     throw new Error(

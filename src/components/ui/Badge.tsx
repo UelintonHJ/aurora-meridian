@@ -1,16 +1,15 @@
 import type { HTMLAttributes } from "react";
 
 type BadgeProps = HTMLAttributes<HTMLSpanElement> & {
-    tone?: "neutral" | "gold" | "signal";
+    tone?: "neutral" | "accent";
 };
 
 const toneClasses = {
     neutral:
-        "border-border bg-surface text-text-secondary",
-    gold:
-        "border-accent-gold/40 bg-accent-gold/10 text-accent-light",
-    signal:
-        "border-signal/30 bg-signal/10 text-signal",
+        "border-border bg-transparent text-text-secondary",
+    
+    accent:
+        "border-border-strong bg-surface text-text-primary",
 };
 
 export function Badge({

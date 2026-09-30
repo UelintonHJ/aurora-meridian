@@ -17,8 +17,10 @@ export function Navigation() {
                             href={item.href}
                             className={[
                                 "text-sm text-text-secondary",
-                                "transition-colors duration-200",
+                                "transition-colors duration-normal ease-standard",
                                 "hover:text-text-primary",
+                                "focus-visible:outline-2 focus-visible:outline-offset-4",
+                                "focus-visible:outline-focus",
                             ].join(" ")}
                         >
                         {item.label}

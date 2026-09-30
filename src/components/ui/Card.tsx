@@ -12,11 +12,11 @@ export function Card({
     return (
         <div
             className={[
-                "rounded-lg border border-border bg-surface p-6",
+                "border border-border bg-surface p-6",
                 interactive
                     ? [
-                        "transition-colors duration-250",
-                        "hover:border-accent-gold/50 hover:bg-surface-elevated",
+                        "transition-colors duration-normal ease-standard",
+                        "hover:border-border-strong hover:bg-surface-elevated",
                     ].join(" ")
                     : "",
                 className,

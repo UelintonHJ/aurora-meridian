@@ -9,8 +9,8 @@ export function Container({
     return (
         <div
             className={[
-                "mx-auto w-full max-w-(--container-max-width)",
-                "px-(--container-gutter)",
+                "mx-auto w-full max-w-(--am-container-max-width)",
+                "px-(--am-container-gutter)",
                 "sm:px-6 lg:px-8",
                 className,
             ]

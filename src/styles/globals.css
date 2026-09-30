@@ -1,17 +1,12 @@
 @import "./tokens.css";
 @import "tailwindcss";
 
-:root {
-  --background: var(--color-background);
-  --foreground: var(--color-text-primary);
-}
-
 * {
   box-sizing: border-box;
 }
 
 html {
-  background: var(--color-background);
+  background: var(--color-canvas);
   color-scheme: dark;
   scroll-padding-top: 5rem;
 }
@@ -19,7 +14,7 @@ html {
 body {
   min-height: 100%;
   margin: 0;
-  background: var(--color-background);
+  background: var(--color-canvas);
   color: var(--color-text-primary);
   font-family: var(--font-sans);
 }
@@ -36,12 +31,12 @@ a {
 }
 
 ::selection {
-  background: var(--color-accent-gold);
-  color: var(--color-background);
+  background: var(--color-surface-elevated);
+  color: var(--color-text-primary);
 }
 
 :focus-visible {
-  outline: 2px solid var(--focus-color);
+  outline: 2px solid var(--color-focus);
   outline-offset: 3px;
 }   
 

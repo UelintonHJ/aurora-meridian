@@ -1,140 +1,181 @@
 :root {
-    /* Color */
-    --background: #080a0d;
-    --surface: #101318;
-    --surface-elevated: #171b21;
+    --am-color-canvas: #171b21;
+    --am-color-surface: #182448;
+    --am-color-surface-elevated: #2a3c6f;
 
-    --text-primary: #f4f1ea;
-    --text-secondary: #a8adb5;
-    --text-muted: #7f8793;
+    --am-color-text-primary: #ebe9df;
+    --am-color-text-secondary: #979993;
 
-    --border: #292e35;
-    --border-subtle: #1d2229;
-    --border-strong: #626975;
+    --am-color-border: #2a3c6f;
+    --am-color-border-subtle: color-mix(
+        in srgb,
+        #2a3c6f 45%,
+        #171b21
+    );
+    --am-color-border-strong: #979993;
 
-    --focus-color: #e4d2a6;
+    --am-color-focus: #ebe9df;
 
-    --accent-gold: #c8a96b;
-    --accent-light: #e4d2a6;
-    --signal: #d7ff63;
-    --danger: #d97979;
+    --am-typeface-ui:
+        var(--font-rondelle),
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
 
-    /* Typography */
-    --typo-font-sans: var(--font-geist-sans);
-    --typo-font-mono: var(--font-geist-mono);
-    --typo-font-display: var(--font-cormorant);
+    --am-typeface-editorial:
+        var(--font-wulkan-display),
+        Georgia,
+        serif;
 
-    --font-size-xs: 0.75rem;
-    --font-size-sm: 0.875rem;
-    --font-size-md: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.25rem;
-    --font-size-2xl: 1.5rem;
-    --font-size-3xl: 1.875rem;
-    --font-size-4xl: 2.25rem;
-    --font-size-5xl: 3rem;
-    --font-size-6xl: 3.75rem;
-    --font-size-7xl: 4.5rem;
+    --am-typeface-mono:
+        ui-monospace,
+        SDMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        "Courier New",
+        monospace;
 
-    --line-height-tight: 1.05;
-    --line-height-snug: 1.2;
-    --line-height-normal: 1.5;
-    --line-height-relaxed: 1.7;
+    --am-font-size-xs: 0.75rem;
+    --am-font-size-sm: 0.875rem;
+    --am-font-size-md: 1rem;
+    --am-font-size-lg: 1.125rem;
+    --am-font-size-xl: 1.25rem;
+    --am-font-size-2xl: 1.5rem;
+    --am-font-size-3xl: 1.875rem;
+    --am-font-size-4xl: 2.25rem;
+    --am-font-size-5xl: 3rem;
+    --am-font-size-6xl: 3.75rem;
+    --am-font-size-7xl: 4.5rem;
 
-    --font-weight-regular: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
+    --am-line-height-tight: 1.05;
+    --am-line-height-snug: 1.2;
+    --am-line-height-normal: 1.5;
+    --am-line-height-relaxed: 1.7;
 
-    --tracking-tight: -0.025em;
-    --tracking-normal: 0;
-    --tracking-wide: 0.04em;
-    --tracking-wider: 0.08em;
+    --am-font-weight-regular: 400;
+    --am-font-weight-medium: 500;
+    --am-font-weight-semibold: 600;
+    --am-font-weight-bold: 700;
 
-    /* Spacing */
-    --space-0: 0;
-    --space-1: 0.25rem;
-    --space-2: 0.5rem;
-    --space-3: 0.75rem;
-    --space-4: 1rem;
-    --space-5: 1.25rem;
-    --space-6: 1.5rem;
-    --space-8: 2rem;
-    --space-10: 2.5rem;
-    --space-12: 3rem;
-    --space-16: 4rem;
-    --space-20: 5rem;
-    --space-24: 6rem;
-    --space-32: 8rem;
-    --space-40: 10rem;
+    --am-tracking-tight: -0.025em;
+    --am-tracking-normal: 0;
+    --am-tracking-wide: 0.04em;
+    --am-tracking-wider: 0.08em;
 
-    /* Radius */
-    --radius-none: 0;
-    --radius-sm: 0.25rem;
-    --radius-md: 0.5rem;
-    --radius-lg: 0.75rem;
-    --radius-xl: 1rem;
-    --radius-full: 9999px;
+    --am-space-1: 0.25rem;
+    --am-space-2: 0.5rem;
+    --am-space-3: 0.75rem;
+    --am-space-4: 1rem;
+    --am-space-5: 1.25rem;
+    --am-space-6: 1.5rem;
+    --am-space-8: 2rem;
+    --am-space-10: 2.5rem;
+    --am-space-12: 3rem;
+    --am-space-16: 4rem;
+    --am-space-20: 5rem;
+    --am-space-24: 6rem;
+    --am-space-32: 8rem;
+    --am-space-40: 10rem;
 
-    /* Shadow */
-    --shadow-none: none;
-    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.18);
-    --shadow-md: 0 8px 24px rgb(0 0 0 / 0.24);
-    --shadow-lg: 0 16px 48px rgb(0 0 0 / 0.32);
-    --shadow-xl: 0 24px 72px rgb(0 0 0 / 0.4);
+    --am-radius-none: 0;
+    --am-radius-sm: 0.125rem;
+    --am-radius-md: 0.25rem;
+    --am-radius-lg: 0.5rem;
+    --am-radius-full: 9999px;
 
-    /* Border */
-    --border-width-thin: 1px;
-    --border-width-medium: 2px;
+    --am-shadow-none: none;
+    --am-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.14);
+    --am-shadow-md: 0 8px 24px rgb(0 0 0 / 0.18);
 
-    /* Motion */
-    --duration-fast: 150ms;
-    --duration-normal: 250ms;
-    --duration-slow: 400ms;
-    --duration-slower: 700ms;
+    --am-border-width-thin: 1px;
+    --am-border-width-medium: 2px;
 
-    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
-    --ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+    --am-duration-fast: 150ms;
+    --am-duration-normal: 250ms;
+    --am-duration-slow: 400ms;
+    --am-duration-slower: 700ms;
 
-    /* Container */
-    --container-max-width: 80rem;
-    --container-gutter: 1.25rem;
+    --am-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --am-ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
 
-    /* Z-index */
-    --z-base: 0;
-    --z-content: 10;
-    --z-header: 100;
-    --z-overlay: 200;
-    --z-modal: 300;
-    --z-toast: 400;
+    --am-container-max-width: 80rem;
+    --am-container-gutter: 1.25rem;
 
-    /* Breakpoints */
+    --am-grid-columns: 12;
+    --am-grid-gap: 1.5rem;
+
+    --am-section-space-sm: 4rem;
+    --am-section-space-md: 6rem;
+    --am-section-space-lg: 8rem;
+
+    --am-z-base: 0;
+    --am-z-content: 10;
+    --am-z-header: 100;
+    --am-z-overlay: 200;
+    --am-z-modal: 300;
+    --am-z-toast: 400;
+
+    --am-breakpoint-sm: 40rem;
+    --am-breakpoint-md: 48rem;
+    --am-breakpoint-lg: 64rem;
+    --am-breakpoint-xl: 80rem;
+    --am-breakpoint-2xl: 96rem;
+}
+
+@theme inline {
+    --color-canvas: var(--am-color-canvas);
+    --color-surface: var(--am-color-surface);
+    --color-surface-elevated: var(--am-color-surface-elevated);
+
+    --color-text-primary: var(--am-color-text-primary);
+    --color-text-secondary: var(--am-color-text-secondary);
+
+    --color-border: var(--am-color-border);
+    --color-border-subtle: var(--am-color-border-subtle);
+    --color-border-strong:var(--am-color-border-strong);
+    --color-focus: var(--am-color-focus);
+
+    --font-sans: var(--am-typeface-ui);
+    --font-editorial: var(--am-typeface-editorial);
+    --font-mono: var(--am-typeface-mono);
+
+    --spacing-1: var(--am-space-1);
+    --spacing-2: var(--am-space-2);
+    --spacing-3: var(--am-space-3);
+    --spacing-4: var(--am-space-4);
+    --spacing-5: var(--am-space-5);
+    --spacing-6: var(--am-space-6);
+    --spacing-8: var(--am-space-8);
+    --spacing-10: var(--am-space-10);
+    --spacing-12: var(--am-space-12);
+    --spacing-16: var(--am-space-16);
+    --spacing-20: var(--am-space-20);
+    --spacing-24: var(--am-space-24);
+    --spacing-32: var(--am-space-32);
+    --spacing-40: var(--am-space-40);
+
+    --radius-sm: var(--am-radius-sm);
+    --radius-md: var(--am-radius-md);
+    --radius-lg: var(--am-radius-lg);
+    --radius-full: var(--am-radius-full);
+
+    --shadow-none: var(--am-shadow-none);
+    --shadow-sm: var(--am-shadow-sm);
+    --shadow-md: var(--am-shadow-md);
+
+    --ease-standard: var(--am-ease-standard);
+    --ease-emphasized: var(--am-ease-emphasized);
+
+    --duration-fast: var(--am-duration-fast);
+    --duration-normal: var(--am-duration-normal);
+    --duration-slow: var(--am-duration-slow);
+    --duration-slower: var(--am-duration-slower);
+
     --breakpoint-sm: 40rem;
     --breakpoint-md: 48rem;
     --breakpoint-lg: 64rem;
     --breakpoint-xl: 80rem;
     --breakpoint-2xl: 96rem;
-}
-
-@theme inline {
-    --color-background: var(--background);
-    --color-surface: var(--surface);
-    --color-surface-elevated: var(--surface-elevated);
-
-    --color-text-primary: var(--text-primary);
-    --color-text-secondary: var(--text-secondary);
-    --color-text-muted: var(--text-muted);
-
-    --color-border: var(--border);
-    --color-border-subtle: var(--border-subtle);
-    --color-border-strong:var(--border-strong);
-
-    --color-accent-gold: var(--accent-gold);
-    --color-accent-light: var(--accent-light);
-    --color-signal: var(--signal);
-    --color-danger: var(--danger);
-
-    --font-sans: var(--typo-font-sans);
-    --font-mono: var(--typo-font-mono);
-    --font-display: var(--typo-font-display);
 }

@@ -18,7 +18,7 @@ export function Metric({
             className={["space-y-2", className].filter(Boolean).join(" ")}
             {...props}
         >
-            <p className="text-3xl font-semibold tracking-tight text-text-primary sm:text-4xl">
+            <p className="font-mono text-3xl font-medium tracking-tight text-text-primary sm:text-4xl">
                 {value}
             </p>
 
@@ -27,7 +27,7 @@ export function Metric({
             </p>
 
             {detail ? (
-                <p className="text-sm leading-relaxed text-text-muted">{detail}</p>
+                <p className="text-sm leading-relaxed text-text-secondary">{detail}</p>
             ) : null}
         </div>
     );

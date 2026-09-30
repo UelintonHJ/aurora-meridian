@@ -24,9 +24,10 @@ export function Accordion({
                 className={[
                     "flex w-full items-center justify-between gap-6 py-5 text-left",
                     "text-base font-medium text-text-primary",
-                    "transition-colors duration-200",
-                    "hover:text-accent-light",
+                    "transition-colors duration-normal ease-standard",
+                    "hover:text-text-secondary",
                     "focus-visible:outline-2 focus-visible:outline-offset-4",
+                    "focus-visible:outline-focus",
                 ].join(" ")}
                 onClick={() => setOpen((current) => !current)}
             >
@@ -36,7 +37,7 @@ export function Accordion({
                     aria-hidden="true"
                     className={[
                         "text-xl font-light text-text-primary",
-                        "transition-transform duration-250",
+                        "transition-transform duration-normal ease-standard",
                         open ? "rotate-45" : "rotate-0",
                     ].join(" ")}
                 >

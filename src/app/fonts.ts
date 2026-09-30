@@ -1,21 +1,16 @@
-import {
-    Cormorant_Garamond,
-    Geist,
-    Geist_Mono,
-} from "next/font/google";
+import localFont from "next/font/local";
 
-export const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
+export const rondelle = localFont({
+    src: "./fonts/Rondelle-EGgr.woff2",
+    variable: "--font-rondelle",
+    display: "swap",
+    fallback: ["Helvetica Neue", "Arial", "sans-serif"],
 });
 
-export const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-});
-
-export const cormorantGaramond = Cormorant_Garamond({
-    variable: "--font-cormorant",
-    subsets: ["latin"],
-    weight: ["400", "500", "600", "700"],
-});
+export const wulkanDisplay = localFont({
+    src: "./fonts/Wulkan-Display-SemiBold.woff2",
+    weight: "600",
+    variable: "--font-wulkan-display",
+    display: "swap",
+    fallback: ["Georgia", "serif"],
+})
