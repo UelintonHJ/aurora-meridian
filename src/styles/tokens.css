@@ -29,7 +29,7 @@
 
     --am-typeface-mono:
         ui-monospace,
-        SDMono-Regular,
+        SFMono-Regular,
         Menlo,
         Monaco,
         Consolas,
@@ -146,6 +146,7 @@
 
     --font-sans: var(--am-typeface-ui);
     --font-editorial: var(--am-typeface-editorial);
+    --font-display: var(--am-typeface-editorial);
     --font-mono: var(--am-typeface-mono);
 
     --spacing-1: var(--am-space-1);

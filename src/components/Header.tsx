@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -19,21 +18,21 @@ function MenuIcon({ open }: { open: boolean }) {
             <span
                 className={[
                     "absolute left-0 top-1/2 block h-px w-5 bg-current",
-                    "transition-transform duration-200 ease-(--ease-standard)",
+                    "transition-transform duration-fast ease-standard",
                     open ? "translate-y-0 rotate-45" : "-translate-y-1.5",
                 ].join(" ")}
             />
             <span
                 className={[
                     "absolute left-0 top-1/2 block h-px w-5 bg-current",
-                    "transition-opacity duration-200 ease-(--ease-standard)",
+                    "transition-opacity duration-fast ease-standard",
                     open ? "opacity-0" : "opacity-100",
                 ].join(" ")}
             />
             <span
                 className={[
-                    "absolute left-0 top-1/2 h-px w-5 bg-current",
-                    "transition-transform duration-200 ease-(--ease-standard)",
+                    "absolute left-0 top-1/2 block h-px w-5 bg-current",
+                    "transition-transform duration-fast ease-standard",
                     open ? "translate-y-0 -rotate-45" : "translate-y-1.5",
                 ].join(" ")}
             />
@@ -166,34 +165,33 @@ export function Header() {
             className={[
                 "sticky top-0 z-(--z-header) w-full border-b",
                 "transition-[background-color,border-color,box-shadow,backdrop-filter]",
-                "duration-(--duration-normal) ease-(--ease-standard)",
+                "duration-normal ease-standard",
                 isScrolled
-                    ? "border-border bg-background/90 shadow-sm backdrop-blur-md"
-                    : "border-transparent bg-transparent",
+                    ? "border-border bg-canvas/90 shadow-sm backdrop-blur-md"
+                    : "border-transparent bg-canvas",
             ].join(" ")}
         >
             <Container>
                 <div className="flex min-h-20 items-center justify-between gap-4">
                     <Link
                         href="/"
-                        aria-label="Aurora Meridian"
+                        aria-label="Aurora Meridian — página inicial"
                         className={[
-                            "flex shrink-0 items-center rounded-md",
-                            "px-2",
+                            "inline-flex shrink-0 items-center rounded-sm",
+                            "font-sans text-lg font-medium tracking-tight",
+                            "text-text-primary",
+                            "transition-colors duration-fast ease-standard",
+                            "hover:text-text-secondary",
+                            "focus-visible:outline-2",
+                            "focus-visible:outline-offset-3",
+                            "focus-visible:outline-focus",
                         ].join(" ")}
                     >
-                        <Image 
-                            src="/images/aurora-meridian-logo.png"
-                            alt="Aurora Meridian"
-                            width={641}
-                            height={402}
-                            sizes="6.5rem"
-                            className="h-16 w-auto object-contain"
-                        />
+                        Aurora Meridian
                     </Link>
 
                     <div className="hidden items-center gap-8 xl:flex">
-                        <nav aria-label="Main navigation">
+                        <nav aria-label="Navegação principal">
                             <ul className="flex items-center gap-6">
                                 {navigationItems.map((item) => (
                                     <li key={item.href}>
@@ -201,8 +199,11 @@ export function Header() {
                                             href={item.href}
                                             className={[
                                                 "text-sm text-text-secondary",
-                                                "transition-colors duration-200",
+                                                "transition-colors duration-fast ease-standard",
                                                 "hover:text-text-primary",
+                                                "focus-visible:outline-2",
+                                                "focus-visible:outline-offset-3",
+                                                "focus-visible:outline-focus",
                                             ].join(" ")}
                                         > 
                                             {item.label}
@@ -216,13 +217,19 @@ export function Header() {
                             href={CTA_HREF}
                             className={[
                                 "inline-flex min-h-11 items-center justify-center",
-                                "rounded-md bg-accent-gold px-5",
-                                "text-sm font-medium text-background",
-                                "transition-colors duration-200",
-                                "hover:bg-accent-light",
+                                "rounded-sm border border-text-primary",
+                                "bg-text-primary px-5",
+                                "text-sm font-medium text-canvas",
+                                "transition-[background-color,color,border-color,transform]", 
+                                "duration-fast ease-standard",
+                                "hover:border-text-secondary",
+                                "hover:bg-text-secondary",
+                                "focus-visible:outline-2",
+                                "focus-visible:outline-offset-3",
+                                "focus-visible:outline-focus",
                             ].join(" ")}
                         >
-                            Request access
+                            Solicitar acesso
                         </Link>
                     </div>
 
@@ -231,17 +238,21 @@ export function Header() {
                             href={CTA_HREF}
                             className={[
                                 "inline-flex min-h-10 items-center justify-center",
-                                "rounded-md border border-border px-3",
-                                "text-xs font-medium uppercase tracking-wide",
+                                "rounded-sm border border-text-primary px-2.5",
+                                "text-xs font-medium",
                                 "text-text-primary",
-                                "transition-colors duration-200",
-                                "hover:border-accent-gold hover:text-accent-light",
+                                "transition-[background-color,color,border-color]",
+                                "duration-fast ease-standard",
+                                "hover:bg-text-primary hover:text-canvas",
+                                "focus-visible:outline-2",
+                                "focus-visible:outline-offset-3",
+                                "focus-visible:outline-focus",
                                 "sm:px-4",
                                 "sm:text-sm sm:normal-case",
                                 "sm:tracking-normal",
                             ].join(" ")}
                         >
-                            Request access
+                            Solicitar acesso
                         </Link>
 
                         <Button
@@ -252,8 +263,8 @@ export function Header() {
                             aria-controls="mobile-navigation"
                             aria-label={
                                 menuOpen
-                                    ? "Close navigation menu"
-                                    : "Open navigation menu"
+                                    ? "Fechar menu de navegação"
+                                    : "Abrir menu de navegação"
                             }
                             onClick={handleMenuToggle}
                             className="size-11 shrink-0 p-0 text-text-primary"
@@ -269,13 +280,13 @@ export function Header() {
                 ref={menuRef}
                 hidden={!menuOpen}
                 className={[
-                    "border-t border-border bg-background",
+                    "border-t border-border bg-canvas",
                     "xl:hidden",
                 ].join(" ")}
             >
                 <Container>
                     <div className="flex min-h-[calc(100svh-5rem)] flex-col py-8">
-                        <nav aria-label="Mobile navigation">
+                        <nav aria-label="Navegação mobile">
                             <ul className="divide-y divide-border">
                                 {navigationItems.map((item) => (
                                     <li key={item.href}>
@@ -285,8 +296,11 @@ export function Header() {
                                             className={[
                                                 "flex min-h-16 items-center",
                                                 "text-2xl font-medium text-text-primary",
-                                                "transition-colors duration-200",
-                                                "hover:text-accent-light",
+                                                "transition-colors duration-fast ease-standard",
+                                                "hover:text-text-secondary",
+                                                "focus-visible:outline-2",
+                                                "focus-visible:outline-offset-3",
+                                                "focus-visible:outline-focus",
                                             ].join(" ")}
                                         >
                                             {item.label}
@@ -302,13 +316,18 @@ export function Header() {
                                 onClick={closeMenu}
                                 className={[
                                     "inline-flex min-h-12 w-full items-center justify-center",
-                                    "rounded-md bg-accent-gold px-5",
-                                    "text-sm font-medium text-background",
-                                    "transition-colors duration-200",
-                                    "hover:bg-accent-light",
+                                    "rounded-sm border border-text-primary", 
+                                    "bg-text-primary px-5",
+                                    "text-sm font-medium text-canvas",
+                                    "transition-colors duration-fast ease-standard",
+                                    "hover:border-text-secondary",
+                                    "hover:bg-text-secondary",
+                                    "focus-visible:outline-2",
+                                    "focus-visible:outline-offset-3",
+                                    "focus-visible:outline-focus",
                                 ].join(" ")}
                             >
-                                Request access
+                                Solicitar acesso
                             </Link>
                         </div>
                     </div>

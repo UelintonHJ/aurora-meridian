@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 
 export const rondelle = localFont({
-    src: "./fonts/Rondelle-EGgr.woff2",
+    src: "./fonts/rt-rondelle-regular-opentype_ufonts.com.woff2",
     variable: "--font-rondelle",
     display: "swap",
     fallback: ["Helvetica Neue", "Arial", "sans-serif"],

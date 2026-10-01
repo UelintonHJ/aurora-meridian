@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { SkipLink } from "@/components/SkipLink";
 import { rondelle, wulkanDisplay } from "./fonts";
 import { siteConfig } from "@/lib/site";
 import "@/styles/globals.css";
@@ -14,14 +17,14 @@ const structuredData = {
       url: siteConfig.url.toString(),
       name: siteConfig.name,
       description: siteConfig.description,
-      inLanguage: "en-US",
+      inLanguage: siteConfig.locale.replace("_", "-"),
     },
     {
       "@type": "Organization",
       "@id": `${siteConfig.url}#organization`,
       name: siteConfig.name,
-      description:
-        "Fictional investment management firm created exclusively as an educational portfolio case study.",
+      legalName: siteConfig.legalName,
+      description: siteConfig.description,
       url: siteConfig.url.toString(),
       logo: `${siteConfig.url}images/aurora-meridian-logo.png`,
     },
@@ -38,8 +41,8 @@ export const metadata: Metadata = {
   metadataBase: siteConfig.url,
 
   title: {
-    default: "Aurora Meridian",
-    template: "%s | Aurora Meridian",
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
   },
   
   description: siteConfig.description,
@@ -65,7 +68,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Aurora Meridian — Beyond the Market Radar",
+        alt: "Aurora Meridian — Gestão profissional de recursos",
       },
     ],
   },
@@ -88,15 +91,23 @@ export default async function RootLayout({
 
   return (
     <html
-      lang="en"
+      lang="pt-BR"
       className={[
         rondelle.variable,
-        wulkanDisplay,
+        wulkanDisplay.variable,
         "h-full antialiased",
       ].join(" ")}
     >
-      <body className="min-h-full bg-background text-text-primary">
-        {children}
+      <body className="min-h-full bg-canvas text-text-primary">
+        <SkipLink />
+
+        <Header />
+
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
+
+        <Footer />
 
         <script
         nonce={nonce}

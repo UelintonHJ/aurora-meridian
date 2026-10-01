@@ -14,7 +14,7 @@ export function Section({
     return (
         <section
             className={[
-                "py-(--section-space-md) lg:py-(--am-section-space-lg)",
+                "py-(--am-section-space-md) lg:py-(--am-section-space-lg)",
                 className
             ]
                 .filter(Boolean)

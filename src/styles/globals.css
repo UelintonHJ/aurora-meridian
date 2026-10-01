@@ -6,17 +6,18 @@
 }
 
 html {
-  background: var(--color-canvas);
+  background: var(--am-color-canvas);
   color-scheme: dark;
   scroll-padding-top: 5rem;
+  scroll-behavior: smooth;
 }
 
 body {
   min-height: 100%;
   margin: 0;
-  background: var(--color-canvas);
-  color: var(--color-text-primary);
-  font-family: var(--font-sans);
+  background: var(--am-color-canvas);
+  color: var(--am-color-text-primary);
+  font-family: var(--am-typeface-ui);
 }
 
 button,
@@ -26,21 +27,31 @@ select {
   font: inherit;
 }
 
-a {
-  color: inherit;
+img,
+svg {
+  display: block;
 }
 
 ::selection {
-  background: var(--color-surface-elevated);
-  color: var(--color-text-primary);
+  background: var(--am-color-surface-elevated);
+  color: var(--am-color-text-primary);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-focus);
+  outline: 2px solid var(--am-color-focus);
   outline-offset: 3px;
 }   
 
+button:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {

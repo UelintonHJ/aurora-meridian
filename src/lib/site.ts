@@ -30,9 +30,10 @@ export { siteUrl };
 
 export const siteConfig = {
     name: "Aurora Meridian",
-    title: "Aurora Meridian — Beyond the Market Radar",
+    legalName: "Aurora Meridian Gestão de Recursos Ltda.",
+    title: "Aurora Meridian — Gestão profissional de recursos",
     description:
-        "Case conceitual fictício de uma gestora de investimentos orientada por pesquisa, disciplina e visão de longo prazo.",
+        "Gestora independente brasileira orientada por inteligência macroeconômica, disciplina de risco e perspectiva global.",
     url: siteUrl,
-    locale: "en_US",
+    locale: "pt_BR",
 };
