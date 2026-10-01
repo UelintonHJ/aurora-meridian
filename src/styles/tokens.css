@@ -97,8 +97,15 @@
     --am-duration-slow: 400ms;
     --am-duration-slower: 700ms;
 
+    --am-motion-instant: 150ms;
+    --am-motion-medium: 450ms;
+    --am-motion-slow: 800ms;
+
     --am-ease-standard: cubic-bezier(0.2, 0, 0, 1);
     --am-ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+
+    --am-motion-ease-standard: var(--am-ease-standard);
+    --am-motion-ease-emphasized: var(--am-ease-emphasized);
 
     --am-container-max-width: 80rem;
     --am-container-gutter: 1.25rem;
@@ -172,6 +179,13 @@
     --duration-normal: var(--am-duration-normal);
     --duration-slow: var(--am-duration-slow);
     --duration-slower: var(--am-duration-slower);
+
+    --duration-instant: var(--am-motion-instant);
+    --duration-medium: var(--am-motion-medium);
+    --duration-motion-slow: var(--am-motion-slow);
+
+    --ease-motion-standard: var(--am-motion-ease-standard);
+    --ease-motion-emphasized: var(--am-motion-ease-emphasized);
 
     --breakpoint-sm: 40rem;
     --breakpoint-md: 48rem;
