@@ -30,7 +30,7 @@ export function Button({
                 "text-sm font-medium tracking-normal",
                 "transition-colors duration-fast ease-standard",
                 "disabled:pointer-events-none disabled:opacity-50",
-                "focus-visible:outline-2 focus-visible:outlie-offset-3",
+                "focus-visible:outline-2 focus-visible:outline-offset-3",
                 "focus-visible:outline-focus",
                 variantClasses[variant],
                 className,

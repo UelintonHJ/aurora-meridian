@@ -2,37 +2,175 @@ import Link from "next/link";
 
 import { Container } from "@/components/ui/Container";
 
-function Radar() {
+function HeroVisual() {
     return (
         <div
             aria-hidden="true"
-            className="relative aspect-square w-full max-w-122 sm:max-w-120 md:max-w-lg lg:max-w-136"
+            className={[
+                "pointer-events-none relative aspect-square w-full", 
+                "max-w-152 lg:justify-self-end",
+                "animate-[hero-visual-in_var(--am-motion-slow)_var(--am-motion-ease-emphasized)_both]",
+                "motion-reduce:animate-none",
+            ].join(" ")}
         >
-            <div className="absolute inset-[8%] rounded-full border border-border/70" />
-            <div className="absolute inset-[23%] rounded-full border border-border/60" />
-            <div className="absolute inset-[38%] rounded-full border border-border/50" />
+            <svg
+                viewBox="0 0 640 640"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="absolute inset-0 h-full w-full"
+            >
+                <defs>
+                    <linearGradient
+                        id="hero-flow"
+                        x1="80"
+                        y1="520"
+                        x2="560"
+                        y2="100"
+                        gradientUnits="userSpaceOnUse"
+                    >
+                        <stop 
+                            stopColor="var(--am-color-text-secondary)"
+                            stopOpacity="0"
+                        />
+                        <stop 
+                            offset="0.48"
+                            stopColor="var(--am-color-text-secondary)"
+                            stopOpacity="0.42"
+                        />
+                        <stop 
+                            offset="1"
+                            stopColor="var(--am-color-text-primary)"
+                            stopOpacity="0.7"
+                        />
+                    </linearGradient>
 
-            <div className="absolute left-1/2 top-[8%] h-[84%] w-px -translate-x-1/2 bg-border/50" />
+                    <radialGradient
+                        id="hero-node"
+                        cx="0"
+                        cy="0"
+                        r="1"
+                        gradientUnits="userSpaceOnUse"
+                        gradientTransform="translate(0 0) rotate(90) scale(1)"
+                    >
+                        <stop 
+                            stopColor="var(--am-color-text-primary)"
+                        />
+                        <stop 
+                            offset="1"
+                            stopColor="var(--am-color-text-primary)"
+                            stopOpacity="0"
+                        />
+                    </radialGradient>
+                </defs>
 
-            <div className="absolute left-[8%] top-1/2 h-px w-[84%] -translate-y-1/2 bg-border/50" />
+                <path 
+                    d="M36 494C132 432 126 280 224 244C302 215 342 286 410 254C486 218 484 116 604 74"
+                    stroke="var(--am-color-border-strong)"
+                    strokeOpacity="0.24"
+                    strokeWidth="1"
+                />
 
-            <div className="absolute left-[24%] top-[29%] size-1.5 rounded-full bg-text-muted opacity-60" />
+                <path
+                    d="M22 548C116 510 184 474 216 394C250 309 226 216 314 174C391 137 444 196 508 156C550 130 574 94 618 42"
+                    stroke="url(#hero-flow)"
+                    strokeWidth="1"
+                />
 
-            <div className="absolute left-[61%] top-[38%] size-1.5 rounded-full bg-text-muted opacity-70" />
+                <path 
+                    d="M78 112C164 174 212 184 276 146C348 104 380 62 462 82C526 98 548 152 594 198"
+                    stroke="var(--am-color-border)"
+                    strokeOpacity="0.42"
+                    strokeWidth="1"
+                />
 
-            <div className="absolute left-[69%] top-[24%] size-2 rounded-full bg-accent-gold opacity-80 animate-[hero-signal_5s_ease-in-out_infinite]" />
+                <path 
+                    d="M54 342C126 302 176 326 226 352C294 388 336 426 402 398C462 372 484 310 554 298C582 293 602 298 620 310"
+                    stroke="var(--am-color-border-strong)"
+                    strokeOpacity="0.18"
+                    strokeWidth="1"
+                />
 
-            <div className="absolute left-[79%] top-[72%] size-2.5 rounded-full bg-signal shadow-[0_0_24px_var(--color-signal)] animate-[hero-signal_4s_ease-in-out_infinite]" />
+                <path 
+                    d="M122 588C174 538 240 522 294 546C354 573 380 590 444 560C510 528 516 470 600 446"
+                    stroke="var(--am-color-border)"
+                    strokeOpacity="0.34"
+                    strokeWidth="1"
+                />
 
-            <div className="absolute inset-[8%] rounded-full border border-accent-gold/10 animate-[hero-radar_12s_ease-in-out_infinite]" />
+                <circle 
+                    cx="216"
+                    cy="394"
+                    r="3"
+                    fill="var(--am-color-text-primary)"
+                    fillOpacity="0.72"
+                />
 
-            <div className="absolute bottom-[8%] left-[8%] font-mono text-[0.625rem] uppercase tracking-wider text-text-muted">
-                Opportunity / 01
+                <circle 
+                    cx="314"
+                    cy="174"
+                    r="3"
+                    fill="var(--am-color-text-secondary)"
+                    fillOpacity="0.75"
+                />
+
+                <circle 
+                    cx="410"
+                    cy="254"
+                    r="3"
+                    fill="var(--am-color-text-primary)"
+                    fillOpacity="0.58"
+                />
+
+                <circle 
+                    cx="508"
+                    cy="156"
+                    r="3"
+                    fill="var(--am-color-text-secondary)"
+                    fillOpacity="0.68"
+                />
+
+                <circle 
+                    cx="444"
+                    cy="560"
+                    r="4"
+                    fill="var(--am-color-text-primary)"
+                    fillOpacity="0.86"
+                />
+
+                <circle 
+                    cx="444"
+                    cy="560"
+                    r="16"
+                    stroke="var(--am-color-text-primary)"
+                    strokeOpacity="0.08"
+                    strokeWidth="1"
+                />
+
+                <circle 
+                    cx="444"
+                    cy="560"
+                    r="30"
+                    stroke="var(--am-color-text-primary)"
+                    strokeOpacity="0.04"
+                    strokeWidth="1"
+                />
+            </svg>
+
+            <div className="absolute right-[12%] top-[14.5%]">
+                <div className="size-1.5 rounded-full bg-text-primary" />
             </div>
 
-            <div className="absolute right-[8%] left-[8%] font-mono text-[0.625rem] uppercase tracking-wider text-text-muted">
-                01 — 04
+            <div className="absolute bottom-[19%] left-[14%]">
+                <div className="size-1 rounded-full bg-text-secondary" /> 
             </div>
+
+            <div 
+                className={[
+                    "absolute bottom-[11.5%] right-[17%]",
+                    "h-px bg-border-subtle",
+                    "sm:w-24",
+                ].join(" ")}
+            />
         </div>
     );
 }
@@ -41,65 +179,128 @@ export function Hero() {
     return (
         <section
             aria-labelledby="hero-title"
-            className="relative isolate overflow-hidden"
+            className={[
+                "relative isolate overflow-hidden",
+                "border-b border-border-subtle"
+            ].join(" ")}
         >
-            <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_75%_42%,rgba(200,169,107,0.07),transparent_28%),radial-gradient(circle_at_25%_80%,rgba(215,255,99,0.025),transparent_24%)]"
-            />
-
             <Container>
-                <div className="grid min-h-[calc(100svh-5rem)] items-center gap-12 py-16 md:py-20 lg:grid-cols-[minmax(0,1.1fr)_minmax(18rem,0.9fr)] lg:gap-8 lg:py-24">
-                    <div className="relative z-(--z-content) max-w-3xl">
-                        <p className="mb-5 text-xs font-medium uppercase tracking-wider text-accent-gold">
-                            Aurora Meridian — Investment Management
-                        </p>
-
-                        <p className="mb-4 font-mono text-[0.6875rem] uppercase tracking-wider text-text-muted">
-                            Opportunity / 01
+                <div className={[
+                    "relative grid min-h-[calc(100svh-5rem)]",
+                    "items-center gap-10",
+                    "py-16 md:py-20 lg:grid-cols-[minmax(0,1.05fr)_minmax(20rem,0.95fr)]",
+                    "lg:gap-4 lg:py-24",
+                ].join(" ")}
+                >
+                    <div className="relative z-(--am-z-content) max-w-3xl">
+                        <p
+                            className={[
+                                "mb-8 font-mono text-[0.6875rem]",
+                                "uppercase tracking-wider text-text-secondary",
+                                "animate-[hero-fade-in_var(--am-motion-medium)_var(--am-motion-ease-emphasized)_both]",
+                                "motion-reduce:animate-none",
+                            ].join(" ")}
+                        >
+                            Gestão independente • Brasil / Mercados globais
                         </p>
 
                         <h1
                             id="hero-title"
-                            className="max-w-4xl text-[clamp(3.5rem,8vw,7.5rem)] font-medium leading-[0.9] tracking-tight text-text-primary"
+                            className={[
+                                "max-w-4xl font-editorial",
+                                "text-[clamp(3.5rem,8vw,7.75rem)]",
+                                "font-semibold leading-[0.88]",
+                                "tracking-[-0.035em] text-text-primary",
+                                "animate-[hero-title-in_var(--am-motion-medium)_var(--am-motion-ease-emphasized)_100ms_both]",
+                                "motion-reduce:animate-none",
+                            ].join(" ")}
                         >
-                            Beyond the{" "}
+                            Capital exige{" "}
                             <span className="font-display font-medium italic">
-                                market radar.
+                                perspectiva.
                             </span>
                         </h1>
 
-                        <p className="mt-8 max-w-xl text-base leading-relaxed text-text-secondary sm:text-lg">
-                            Capital for opportunities beyond the traditional
-                            market radar, guided by research, disciplined
-                            analysis and a long-term view.
-                        </p>
-
-                        <Link
-                            href="/opportunity/access"
+                        <p
                             className={[
-                                "mt-8 inline-flex min-h-12 items-center justify-center",
-                                "rounded-md bg-accent-gold px-6",
-                                "text-sm font-medium text-background",
-                                "transition-[background-color,transform]",
-                                "duration-(--duration-normal) ease-(--ease-standard)",
-                                "hover:bg-accent-light hover:-translate-y-0.5",
-                                "focus-visible:outline-2 focus-visible:outline-offset-3",
-                                "focus-visible:outline-(--focus-color)",
+                                "mt-8 max-w-xl",
+                                "text-base leading-relaxed",
+                                "text-text-secondary sm:text-lg",
+                                "animate-[hero-fade-in_var(--am-motion-medium)_var(--am-motion-ease-emphasized)_250ms_both]",
+                                "motion-reduce:animate-none",
                             ].join(" ")}
                         >
-                            Explore the opportunity
-                            <span aria-hidden="true" className="ml-3">
-                                →
-                            </span>
-                        </Link>
+                            A Aurora Meridian é uma gestora independente
+                            brasileira orientada por inteligência
+                            macroeconômica, disciplina de risco e perspectiva
+                            global.
+                        </p>
+
+                        <div
+                            className={[
+                                "mt-10 flex flex-col items-start gap-3",
+                                "sm:flex-row sm:items-center",
+                                "animate-[hero-fade-in_var(--am-motion-medium)_var(--am-motion-ease-emphasized)_400ms_both]",
+                                "motion-reduce:animate-none",
+                            ].join(" ")}
+                        >
+                            <Link
+                                href="#approach"
+                                className={[
+                                    "inline-flex min-h-12 items-center justify-center",
+                                    "rounded-sm bg-text-primary px-6",
+                                    "text-sm font-medium text-canvas",
+                                    "transition-[background-color,color,transform]",
+                                    "duration-normal ease-standard",
+                                    "hover:bg-text-secondary",
+                                    "hover:-translate-y-0.5",
+                                    "focus-visible:outline-2",
+                                    "focus-visible:outline-offset-3",
+                                    "focus-visible:outline-focus",
+                                ].join(" ")}
+                            >
+                                Explorar nossa abordagem
+                                <span aria-hidden="true" className="ml-3">
+                                    →
+                                </span>
+                            </Link>
+
+                            <Link
+                                href="#firm"
+                                className={[
+                                    "inline-flex min-h-12 items-center",
+                                    "rounded-sm px-4",
+                                    "text-sm font-medium text-text-secondary",
+                                    "transition-[color,transform]",
+                                    "duration-normal ease-standard",
+                                    "hover:text-text-primary",
+                                    "hover:-translate-y-0.5",
+                                    "focus-visible:outline-2",
+                                    "focus-visible:outline-offset-3",
+                                    "focus-visible:outline-focus",
+                                ].join(" ")}
+                            >
+                                Conhecer a Aurora
+                                <span
+                                    aria-hidden="true"
+                                    className="ml-3"
+                                >
+                                    →
+                                </span>
+                            </Link>
+                        </div>
                     </div>
 
-                    <div>
-                        <Radar />
+                    <div
+                        className={[
+                            "relative flex items-center justify-center",
+                            "lg:min-h-144",
+                        ].join(" ")}
+                    >
+                        <HeroVisual />
                     </div>
                 </div>
             </Container>
-        </section>
+        </section >
     );
 }
