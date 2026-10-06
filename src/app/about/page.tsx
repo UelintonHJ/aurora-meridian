@@ -280,7 +280,7 @@ export default function AboutPage() {
                             {leadership.map(([name, role], index) => (
                                 <article
                                     key={name}
-                                    className="grid gap-4 border-b border-border py-7 sm:grid-cols[4rem_minmax(0,1fr)_minmax(12rem,0.5fr)] sm:items-baseline sm:gap-8"
+                                    className="grid gap-4 border-b border-border py-7 sm:grid-cols-[4rem_minmax(0,1fr)_minmax(12rem,0.5fr)] sm:items-baseline sm:gap-8"
                                 >
                                     <p
                                         aria-hidden="true"
@@ -367,7 +367,7 @@ export default function AboutPage() {
                             </h2>
 
                             <Link
-                                href="/#approach"
+                                href="/approach"
                                 className="group mt-8 inline-flex items-center gap-4 border-b border-text-primary pb-2 text-sm font-medium text-text-primary"
                             >
                                 Conheça nossa abordagem

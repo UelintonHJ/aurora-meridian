@@ -28,7 +28,7 @@ const principles = [
         description:
             "Decisões de investimento carregam consequências. Cada pessoa é responsável pela qualidade do raciocínio, pela clareza da decisão e pelo resultado que dela decorre.",
         detail:
-            "Accountability significa assumir responsabilidade pelo processo",
+            "Accountability significa assumir responsabilidade pelo processo, tornar premissas explícitas e reconhecer rapidamente quando uma tese precisa ser reavaliada.",
     },
     {
         number: "03",
@@ -44,7 +44,7 @@ const principles = [
         description:
             "Confiança institucional começa pela coerência entre o que defendemos, o que decidimos e como agimos quando ninguém está olhando.",
         detail:
-            "Integridade orienta a relação com investidores, colegas, parceiros e mercados. Ela estabelece o padrão para decisões que precisam permanecer denfensáveis ao longo do tempo.",
+            "Integridade orienta a relação com investidores, colegas, parceiros e mercados. Ela estabelece o padrão para decisões que precisam permanecer defensáveis ao longo do tempo.",
     },
 ];
 
@@ -171,7 +171,7 @@ export default function CulturePage() {
                                     delay={
                                         index % 3 === 0
                                         ? "instant"
-                                        : index %  3 === 1
+                                        : index % 3 === 1
                                             ? "medium"
                                             : "slow"
                                     }

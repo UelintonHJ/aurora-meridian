@@ -93,7 +93,7 @@ const opportunityMap = [
         number: "03",
         title: "Tese",
         description:
-            "Estruturar uma hipótese clara sobre o que precisa acontencer e por quê.",
+            "Estruturar uma hipótese clara sobre o que precisa acontecer e por quê.",
     },
     {
         number: "04",
@@ -119,7 +119,7 @@ export default function ApproachPage() {
     return (
         <>
             <Section className="pt-24 lg:pt-32">
-                <div className="grid gap-12 lg:grid-cols-[minmax(8rem, 0.22fr)_minmax(0,1fr)] lg:gap-16">
+                <div className="grid gap-12 lg:grid-cols-[minmax(8rem,0.22fr)_minmax(0,1fr)] lg:gap-16">
                     <p
                         aria-hidden="true"
                         className="font-mono text-xs uppercase tracking-wider text-text-secondary"
@@ -228,7 +228,7 @@ export default function ApproachPage() {
                                         {index < process.length - 1 && (
                                             <span
                                                 aria-hidden="true"
-                                                className="mt-3 text-text-secondary md:absolute md:-botom-3 md:left-4 md:mt-0"
+                                                className="mt-3 text-text-secondary md:absolute md:-bottom-3 md:left-4 md:mt-0"
                                             >
                                                 ↓
                                             </span>
@@ -384,7 +384,7 @@ export default function ApproachPage() {
                             </h2>
 
                             <Link 
-                                href="/#capabilities"
+                                href="/strategies"
                                 className="group mt-8 inline-flex items-center gap-4 border-b border-text-primary pb-2 text-sm font-medium text-text-primary"
                             >
                                 Explorar estratégias
