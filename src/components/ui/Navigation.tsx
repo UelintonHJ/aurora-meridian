@@ -1,10 +1,11 @@
 import Link from "next/link";
 
 export const navigationItems = [
-    { href: "#strategy", label: "Strategy" },
-    { href: "#insights", label: "Insights" },
-    { href: "#about", label: "About" },
-    { href: "#events", label: "Events" },
+    { href: "/about", label: "About" },
+    { href: "/approach", label: "Approach" },
+    { href: "/strategies", label: "Strategies" },
+    { href: "/culture", label: "Culture" },
+    { href: "/careers", label: "Careers" },
 ];
 
 export function Navigation() {
