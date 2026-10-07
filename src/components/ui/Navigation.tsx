@@ -4,6 +4,7 @@ export const navigationItems = [
     { href: "/about", label: "About" },
     { href: "/approach", label: "Approach" },
     { href: "/strategies", label: "Strategies" },
+    { href: "/research", label: "Research" },
     { href: "/culture", label: "Culture" },
     { href: "/careers", label: "Careers" },
 ];
@@ -24,7 +25,7 @@ export function Navigation() {
                                 "focus-visible:outline-focus",
                             ].join(" ")}
                         >
-                        {item.label}
+                            {item.label}
                         </Link>
                     </li>
                 ))}
