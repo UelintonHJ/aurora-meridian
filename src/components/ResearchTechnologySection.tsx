@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
 
@@ -113,6 +115,28 @@ export function ResearchTechnologySection() {
                                     </span>
                                 </p>
                             </Reveal>
+
+                            <Link 
+                                href="/research"
+                                className={[
+                                    "group mt-8 inline-flex items-center gap-4",
+                                    "border-b border-text-primary pb-2",
+                                    "text-sm font-medium text-text-primary",
+                                    "transition-colors duration-fast ease-standard",
+                                    "hover:text-text-secondary",
+                                    "focus-visible:outline-2 focus-visible:outline-offset-3",
+                                    "focus-visible:outline-focus",
+                                ].join(" ")}    
+                            >
+                                Explorar Research
+
+                                <span
+                                    aria-hidden="true"
+                                    className="transition-transform duration-fast group-hover:translate-x-1"
+                                >
+                                    →
+                                </span>
+                            </Link>
                         </div>
                     </div>
                 </Reveal>

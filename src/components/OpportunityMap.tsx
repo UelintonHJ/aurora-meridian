@@ -115,7 +115,7 @@ export function OpportunityMap() {
                                     type="button"
                                     role="tab"
                                     aria-selected={isActive}
-                                    aria-controls={`oportunity-stage-${stage.number}`}
+                                    aria-controls={`opportunity-stage-${stage.number}`}
                                     id={`opportunity-tab-${stage.number}`}
                                     onClick={() => setActiveStage(index)}
                                     className={[
