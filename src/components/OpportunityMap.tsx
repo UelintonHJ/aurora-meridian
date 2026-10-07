@@ -1,239 +1,199 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
+import { Reveal } from "@/components/motion/Reveal";
 import { Section } from "@/components/ui/Section";
 
-const radarPoints = [
-    { id: "consensus-one", cx: 32, cy: 42, variant: "muted" },
-    { id: "consensus-two", cx: 43, cy: 56, variant: "muted" },
-    { id: "consensus-three", cx: 55, cy: 34, variant: "gold" },
-    { id: "opportunity", cx: 79, cy: 23, variant: "signal" },
+const stages = [
+    {
+        number: "01",
+        title: "Sinal",
+        label: "SIGNAL",
+        description:
+            "Observar mudanças no ambiente macroeconômico, relações entre mercados e sinais que merecem investigação.",
+    },
+    {
+        number: "02",
+        title: "Oportunidade",
+        label: "OPPORTUNITY",
+        description:
+            "Identificar onde uma mudança de regime, uma divergência ou uma assimetria pode justificar uma investigação mais profunda.",
+    },
+    {
+        number: "03",
+        title: "Tese",
+        label: "THESIS",
+        description:
+            "Estruturar uma hipótese clara sobre o que pode estar mudando, por que isso importa e quais evidências sustentariam ou enfraqueceriam a ideia.",
+    },
+    {
+        number: "04",
+        title: "Estrutura",
+        label: "STRUCTURE",
+        description:
+            "Transformar a hipótese em uma estrutura de investimento possível, com horizonte, exposição e condições de invalidação definidos.",
+    },
+    {
+        number: "05",
+        title: "Risco",
+        label: "RISK",
+        description:
+            "Examinar o que pode dar errado, testar cenários adversos e compreender como a exposição deve ser dimensionada diante da incerteza.",
+    },
+    {
+        number: "06",
+        title: "Papel no portfólio",
+        label: "PORTFOLIO ROLE",
+        description:
+            "Definir qual função uma oportunidade poderia exercer dentro de um portfólio, considerando diversificação, exposição, risco e convicção.",
+    },
 ] as const;
 
 export function OpportunityMap() {
-    const radarRef = useRef<HTMLDivElement>(null);
-    const [isVisible, setIsVisible] = useState(false);
+    const [activeStage, setActiveStage] = useState(0);
 
-    useEffect(() => {
-        const radar = radarRef.current;
+    const selectedStage = stages[activeStage];
 
-        if (!radar) {
-            return;
-        }
-
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.disconnect();
-                }
-            },
-            {
-                threshold: 0.25,
-            },
-        );
-
-        observer.observe(radar);
-
-        return () => {
-            observer.disconnect();
-        };
-    }, []);
-    
     return (
         <Section
-            id="strategy"
+            id="opportunity-map"
             aria-labelledby="opportunity-map-title"
-            className="overflow-hidden border-t border-border"
+            className="border-t border-border"
         >
-            <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-20">
-                <div className="relative z-10 max-w-2xl">
-                    <p className="text-xs font-medium uppercase tracking-wider text-accent-gold">
-                        Opportunity thesis
-                    </p>
-
-                    <h2
-                        id="opportunity-map-title"
-                        className="mt-5 max-w-xl text-5xl font-medium leading-[0.95] tracking-tight text-text-primary sm:text-6xl lg:text-7xl"
-                    >
-                        O mercado vê o que está evidente.
-                        <span className="mt-2 block font-display font-medium italic text-text-secondary">
-                            Nós procuramos o que ainda não está no radar.
-                        </span>
-                    </h2>
-
-                    <p className="mt-8 max-w-lg text-base leading-relaxed text-text-secondary sm:text-lg">
-                        Nem toda oportunidade começa onde o consenso aponta.
-                        Nossa tese parte da pesquisa, da estrutura e da análise 
-                        das situações que exigem uma visão diferente.
-                    </p>
-
-                    <div className="mt-10 grid max-w-md gap-6 border-t border-border pt-6 sm:grid-cols-2">
-                        <div>
-                            <p className="font-mono text-[0.6875rem] uppercase tracking-wider text-text-muted">
+            <div className="grid gap-14 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-24">
+                <div>
+                    <Reveal>
+                        <div className="flex items-center gap-4">
+                            <p
+                                aria-hidden="true"
+                                className="font-mono text-xs uppercase tracking-wider text-text-secondary"
+                            >
                                 01
                             </p>
 
-                            <p className="mt-2 text-sm font-medium text-text-primary">
-                                Consenso
-                            </p>
-
-                            <p className="mt-2 text-sm leading-relaxed text-text-muted">
-                                O que o mercado já consegue identificar.
+                            <p className="text-xs font-medium uppercase tracking-wider text-text-secondary">
+                                Decision Architecture
                             </p>
                         </div>
 
-                        <div>
-                            <p className="font-mono text-[0.6875rem] uppercase tracking-wider text-text-muted">
-                                02
-                            </p>
+                        <h2
+                            id="opportunity-map-title"
+                            className="mt-8 max-w-xl font-editorial text-4xl leading-[1.05] tracking-tight text-text-primary sm:text-5xl lg:text-6xl"
+                        >
+                            Como uma ideia pode se transformar em uma decisão.
+                        </h2>
 
-                            <p className="mt-2 text-sm font-medium text-text-primary">
-                                Oportunidade
-                            </p>
+                        <p className="mt-7 max-w-xl text-base leading-relaxed text-text-secondary sm:text-lg">
+                            O Opportunity Map mostra a arquitetura de uma
+                            decisão de investimento sem reproduzir uma tese,
+                            posição ou dado proprietário da Aurora Meridian.
+                        </p>
+                    </Reveal>
 
-                            <p className="mt-2 text-sm leading-relaxed text-text-muted">
-                                O que exige pesquisa para ser encontrado.
-                            </p>
-                        </div>
-                    </div>
+                    <Reveal delay="medium">
+                        <p className="mt-8 max-w-lg border-l border-border pl-5 text-sm leading-relaxed text-text-secondary">
+                            Exemplo conceitual. A experiência não representa
+                            uma recomendação, posição atual ou simulação de
+                            performance.
+                        </p>
+                    </Reveal>
                 </div>
 
-                <div
-                    ref={radarRef}
-                    className="relative mx-auto w-full max-w-3xl md:self-center"
-                >
-                    <div className="relative aspect-square" aria-hidden="true">
-                        <div className="absolute inset-[5%] rounded-full border border-border/70" />
-                        <div className="absolute inset-[17%] rounded-full border border-border/60" />
-                        <div className="absolute inset-[29%] rounded-full border border-border/50" />
-                        <div className="absolute inset-[41%] rounded-full border border-border/40" />
+                <div>
+                    <div
+                        role="tablist"
+                        aria-label="Etapas da arquitetura de decisão"
+                        className="border-y border-border"
+                    >
+                        {stages.map((stage, index) => {
+                            const isActive = index === activeStage;
 
-                        <div className="absolute left-1/2 top-[5%] h-[90%] w-px -translate-x-1/2 bg-border/40" />
-                        <div className="absolute left-[5%] top-1/2 h-px w-[90%] -translate-y-1/2 bg-border/40" />
-
-                        <div className="absolute inset-[5%] overflow-hidden rounded-full">
-                            <div 
-                                className={[
-                                    "absolute left-1/2 top-1/2 h-1/2 w-1/2 origin-bottom-left",
-                                    "-translate-x-0.5 -translate-y-full",
-                                    "bg-[conic-gradient(from_0deg,transparent_0deg,rgba(215,255,99,0.12)_18deg,transparent_48deg)]",
-                                    "motion-safe:animate-[spin_14s_linear_infinite]",
-                                ].join(" ")}
-                            />
-                        </div>
-
-                        <svg
-                            viewBox="0 0 100 100"
-                            className="absolute inset-0 size-full"
-                        >
-                            <line 
-                                x1="32"
-                                y1="42"
-                                x2="43"
-                                y2="56"
-                                pathLength="1"
-                                className={[
-                                    "fill-none stroke-border trasition-[stroke-dashoffset,opacity]",
-                                    "duration-900 ease-(--ease-emphasized)",
-                                    isVisible
-                                        ? "opacity-100 [stroke-dashoffset:0"
-                                        : "opacity-0 [stroke-dashoffset:1"
-                                ].join(" ")}
-                                strokeDasharray="1"
-                                strokeWidth="0.25"
-                            />
-
-                            <line 
-                                x1="43"
-                                y1="56"
-                                x2="55"
-                                y2="34"
-                                pathLength="1"
-                                className={[
-                                    "fill-none stroke-border transition-[stroke-dashoffset,opacity]",
-                                    "delay-150 duration-900 ease-(--emphasized)",
-                                    isVisible
-                                        ? "opacity-100 [stroke-dashoffset:0]"
-                                        : "opacity-0 [stroke-dashoffset:1]",
-                                ].join(" ")}
-                                strokeDasharray="1"
-                                strokeWidth="0.25"
-                            />
-
-                            <line 
-                                x1="55"
-                                y1="34"
-                                x2="79"
-                                y2="23"
-                                pathLength="1"
-                                className={[
-                                    "fill-one stroke-accent-gold transition-[stroke-dashoffset,opacity]",
-                                    "delay-300 duration-1100 ease-(--emphasized)",
-                                    isVisible
-                                        ? "opacity-80 [stroke-dashoffset:0]" 
-                                        : "opacity-0 [stroke-dashoffset:1]",
-                                ].join(" ")}
-                                strokeDasharray="1"
-                                strokeWidth="0.3"
-                            />
-
-                            {radarPoints.map((point, index) => (
-                                <circle 
-                                    key={point.id}
-                                    cx={point.cx}
-                                    cy={point.cy}
-                                    r={
-                                        point.variant === "signal"
-                                        ? 1.35
-                                        : 0.9
-                                    }
+                            return (
+                                <button
+                                    key={stage.number}
+                                    type="button"
+                                    role="tab"
+                                    aria-selected={isActive}
+                                    aria-controls={`oportunity-stage-${stage.number}`}
+                                    id={`opportunity-tab-${stage.number}`}
+                                    onClick={() => setActiveStage(index)}
                                     className={[
-                                        point.variant === "signal"
-                                            ? "fill-signal"
-                                            : point.variant === "gold"
-                                                ? "fill-accent-gold"
-                                                : "fill-text-muted",
-                                        "transition-[opacity,transform]",
-                                        "duration-700 ease-(--ease-emphasized)",
-                                        isVisible
-                                            ? "opacity-100"
-                                            : "opacity-0",
+                                        "group grid w-full grid-cols-[3rem_minmax(0,1fr)_auto] items-center gap-4",
+                                        "border-b border-border-subtle py-5 text-left last-border-b-0",
+                                        "transition-colors duration-normal ease-standard",
+                                        "focus-visible:outline-2 focus-visible:outline-offset-2",
+                                        "focus-visible:outline-focus",
+                                        isActive
+                                            ? "text-text-primary"
+                                            : "text-text-secondary hover:text-text-primary",
                                     ].join(" ")}
-                                    style={{
-                                        transitionDelay: `${index * 140}ms`,
-                                    }}
-                                />
-                            ))}
+                                >
+                                    <span
+                                        aria-hidden="true"
+                                        className={[
+                                            "font-mono text-xs transition-colors duration-fast",
+                                            isActive
+                                                ? "text-text-primary"
+                                                : "text-text-secondary",
+                                        ].join(" ")}
+                                    >
+                                        {stage.number}
+                                    </span>
 
-                            <circle 
-                                cx="79"
-                                cy="23"
-                                r="4"
-                                className={[
-                                    "fill-none stroke-signal/20",
-                                    "transition-[opacity,transform]",
-                                    "duration-1000 ease-(--ease-emphasized)",
-                                    isVisible
-                                        ? "scale-100 opacity-100"
-                                        : "scale-75 opacity-0",
-                                ].join(" ")}
-                            />
-                        </svg>
-                        
-                        <div className="absolute left-[5%] top-[5%] font-mono text-[0.625rem] uppercase tracking-wider text-text-muted">
-                            Market field
-                        </div>
+                                    <span
+                                        className={[
+                                            "font-editorial text-2xl leading-tight sm:text-3xl",
+                                            isActive
+                                                ? "text-text-primary"
+                                                : "text-text-secondary",
+                                        ].join(" ")}
+                                    >
+                                        {stage.title}
+                                    </span>
 
-                        <div className="absolute bottom-[5%] left-[5%] font-mono text-[0.625rem] uppercase tracking-wider text-text-muted">
-                            Consensus
-                        </div>
-
-                        <div className="absolute right-[5%] top-[5%] max-w-28 text-right font-mono text-[0.625rem] uppercase tracking-wider text-signal">
-                            Beyond the radar
-                        </div>
+                                    <span
+                                        aria-hidden="true"
+                                        className={[
+                                            "text-lg transition-transform duration-fast ease-standard",
+                                            isActive
+                                                ? "translate-x-0 opacity-100"
+                                                : "-translate-x-1 opacity-50",
+                                        ].join(" ")}
+                                    >
+                                        →
+                                    </span>
+                                </button>
+                            );
+                        })}
                     </div>
+
+                    <Reveal>
+                        <div
+                            id={`opportunity-stage-${selectedStage.number}`}
+                            role="tabpanel"
+                            aria-labelledby={`opportunity-tab-${selectedStage.number}`}
+                            className="border-b border-border py-8 sm:py-10"
+                        >
+                            <div className="grid gap-8 sm:grid-cols-[minmax(8rem,0.35fr)_minmax(0,1fr)] sm:gap-12">
+                                <div>
+                                    <p className="font-mono text-[0.6875rem] uppercase tracking-wider text-text-secondary">
+                                        Etapa
+                                    </p>
+
+                                    <p className="mt-2 font-mono text-xs uppercase tracking-wider text-text-primary">
+                                        {selectedStage.label}
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <p className="max-w-2xl text-lg leading-relaxed text-text-primary sm:text-xl">
+                                        {selectedStage.description}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </Reveal>
                 </div>
             </div>
         </Section>
