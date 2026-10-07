@@ -5,10 +5,9 @@ import { AccessFlow } from "@/components/secure-conversion/AccessFlow";
 export const metadata: Metadata = {
     title: "Request Access",
     description:
-        "Access flow for the Aurora Meridian fictional portfolio case.",
-    robots: {
-        index: false,
-        follow: false,
+        "Entre em contato com a Aurora Meridian para conhecer nossas estratégias e estabelecer uma relação institucional.",
+    alternates: {
+        canonical: "/opportunity/access",
     },
 };
 
