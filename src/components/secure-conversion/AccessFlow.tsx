@@ -172,7 +172,9 @@ export function AccessFlow() {
         });
 
         if (Object.keys(errors).length > 0) {
+            setSubmissionState("idle");
             setSubmissionMessage("");
+            return
         }
 
         setSubmissionState("loading");
