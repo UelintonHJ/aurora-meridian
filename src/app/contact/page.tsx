@@ -7,7 +7,7 @@ import { Section } from "@/components/ui/Section";
 export const metadata: Metadata = {
     title: "Contato",
     description:
-        "Entre em contato com a Aurora Meridian para assuntos institucionais, acessp a estratégias e oportunidades profissionais.",
+        "Entre em contato com a Aurora Meridian para assuntos institucionais, acesso a estratégias e oportunidades profissionais.",
     alternates: {
         canonical: "/contact",
     },
