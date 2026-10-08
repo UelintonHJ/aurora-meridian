@@ -30,7 +30,7 @@ const investorTypes: Array<{
 }> = [
         {
             value: "institution",
-            label: "Instituição,"
+            label: "Instituição"
         },
         {
             value: "family-office",
@@ -259,7 +259,7 @@ export function AccessFlow() {
                 className="border-b border-border-subtle"
             >
                 <Container>
-                    <div className="grid min-h-[calc(100svg-5rem)] items-center py-16 lg:grid-cols-[minmax(8rem,0.22fr)_minmax(0,1fr)] lg:gap-16 lg:py-24">
+                    <div className="grid min-h-[calc(100svh-5rem)] items-center py-16 lg:grid-cols-[minmax(8rem,0.22fr)_minmax(0,1fr)] lg:gap-16 lg:py-24">
                         <div>
                             <p
                                 aria-hidden="true"
