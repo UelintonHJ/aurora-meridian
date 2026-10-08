@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FormEvent, useState } from "react";
 
 import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
 
 type InvestorType =
     | "institution"
@@ -200,12 +201,12 @@ export function AccessFlow() {
     if (submissionState === "success") {
         return (
             <main>
-                <section
+                <Section
                     aria-labelledby="access-success-title"
                     className="border-b border-border-subtle"
                 >
                     <Container>
-                        <div className="grid min-h-[calc(100svh-5rem)] items-center py-16 lg:grid-cols-[minmax(8rem,0.22fr)_minmax(0,1fr)] lg:gap-16 lg:py-24">
+                        <div className="grid items-center lg:grid-cols-[minmax(8rem,0.22fr)_minmax(0,1fr)]">
                             <p
                                 aria-hidden="true"
                                 className="font-mono text-xs uppercase tracking-wider text-text-secondary"
@@ -249,19 +250,19 @@ export function AccessFlow() {
                             </div>
                         </div>
                     </Container>
-                </section>
+                </Section>
             </main>
         );
     }
 
     return (
         <main>
-            <section
+            <Section
                 aria-labelledby="access-title"
                 className="border-b border-border-subtle"
             >
                 <Container>
-                    <div className="grid min-h-[calc(100svh-5rem)] items-center py-16 lg:grid-cols-[minmax(8rem,0.22fr)_minmax(0,1fr)] lg:gap-16 lg:py-24">
+                    <div className="grid items-center lg:grid-cols-[minmax(8rem,0.22fr)_minmax(0,1fr)]">
                         <div>
                             <p
                                 aria-hidden="true"
@@ -292,14 +293,14 @@ export function AccessFlow() {
                         </div>
                     </div>
                 </Container>
-            </section>
+            </Section>
 
-            <section
+            <Section
                 aria-labelledby="access-form-title"
                 className="border-b border-border-subtle"
             >
                 <Container>
-                    <div className="grid gap-12 py-16 lg:grid-cols-[minmax(8rem,0.22fr)_minmax(0,1fr)] lg:gap-16 lg:py-24">
+                    <div className="grid lg:grid-cols-[minmax(8rem,0.22fr)_minmax(0,1fr)]">
                         <div>
                             <p className="font-mono text-xs uppercase tracking-wider text-text-secondary">
                                 Solicitar acesso
@@ -620,7 +621,7 @@ export function AccessFlow() {
                         </div>
                     </div>
                 </Container>
-            </section>
+            </Section>
         </main >
     );
 }
