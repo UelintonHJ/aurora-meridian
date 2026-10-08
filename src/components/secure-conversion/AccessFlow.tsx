@@ -58,26 +58,37 @@ const initialFormData: AccessFormData = {
     country: "",
 };
 
-function validateField(
-    field: FieldName,
-    value: string,
-): string | null {
-    const normalizedValue = value.trim();
+function validateForm(
+    data: AccessFormData,
+): Partial<Record<FieldName, string>> {
+    const errors: Partial<Record<FieldName, string>> = {};
 
-    if (!normalizedValue) {
-        return "Este campo é obrigatório.";
+    if (!data.investorType) {
+        errors.investorType = "Selecione uma opção.";
     }
 
-    if (field === "email") {
-        const emailPattern =
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!emailPattern.test(normalizedValue)) {
-            return "Informe um endereço de e-mail válido.";
-        }
+    if (!data.name.trim()) {
+        errors.name = "Informe seu nome.";
     }
 
-    return null;
+    if (!data.organization.trim()) {
+        errors.organization = "Informe sua organização.";
+    }
+
+    if (!data.email.trim()) {
+        errors.email = "Informe seu e-mail.";
+    } else if (
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)
+    ) {
+        errors.email =
+            "Informe um endereço de e-mail válido.";
+    }
+
+    if (!data.country.trim()) {
+        errors.country = "Informe seu país.";
+    }
+
+    return errors;
 }
 
 export function AccessFlow() {
@@ -92,6 +103,9 @@ export function AccessFlow() {
 
     const [SubmissionMessage, setSubmissionMessage] =
         useState("");
+
+    const [fieldErrors, setFieldErrors] =
+        useState<Partial<Record<FieldName, string>>>({});
 
     const updateField = (
         field: FieldName,
@@ -108,6 +122,20 @@ export function AccessFlow() {
             ...current,
             [field]: true,
         }));
+
+        const errors = validateForm(formData);
+
+        setFieldErrors((current) => {
+            const next = { ...current };
+
+            if (errors[field]) {
+                next[field] = errors[field];
+            } else {
+                delete next[field];
+            }
+
+            return next;
+        });
     };
 
     const getFieldError = (field: FieldName) => {
@@ -115,10 +143,7 @@ export function AccessFlow() {
             return null;
         }
 
-        return validateField(
-            field,
-            formData[field],
-        );
+        return fieldErrors[field] ?? null;
     };
 
     const isFieldValid = (field: FieldName) => {
@@ -126,43 +151,7 @@ export function AccessFlow() {
             return false;
         }
 
-        return !validateField(
-            field,
-            formData[field],
-        );
-    };
-
-    const validateForm = () => {
-        const fields: FieldName[] = [
-            "investorType",
-            "name",
-            "organization",
-            "email",
-            "country",
-        ];
-
-        const nextTouchedFields: Partial<
-            Record<FieldName, boolean>
-        > = {};
-
-        let hasError = false;
-
-        for (const field of fields) {
-            nextTouchedFields[field] = true;
-
-            if (
-                validateField(
-                    field,
-                    formData[field],
-                )
-            ) {
-                hasError = true;
-            }
-        }
-
-        setTouchedFields(nextTouchedFields);
-
-        return "!hasError";
+        return !fieldErrors[field];
     };
 
     const handleSubmit = async (
@@ -170,8 +159,20 @@ export function AccessFlow() {
     ) => {
         event.preventDefault();
 
-        if (!validateForm()) {
-            return
+        const errors = validateForm(formData);
+
+        setFieldErrors(errors);
+
+        setTouchedFields({
+            investorType: true,
+            name: true,
+            organization: true,
+            email: true,
+            country: true,
+        });
+
+        if (Object.keys(errors).length > 0) {
+            setSubmissionMessage("");
         }
 
         setSubmissionState("loading");
