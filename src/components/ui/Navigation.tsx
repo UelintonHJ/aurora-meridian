@@ -1,12 +1,13 @@
 import Link from "next/link";
 
 export const navigationItems = [
-    { href: "/about", label: "About" },
-    { href: "/approach", label: "Approach" },
-    { href: "/strategies", label: "Strategies" },
+    { href: "/about", label: "Sobre" },
+    { href: "/approach", label: "Abordagem" },
+    { href: "/strategies", label: "Estratégias" },
     { href: "/research", label: "Research" },
-    { href: "/culture", label: "Culture" },
-    { href: "/careers", label: "Careers" },
+    { href: "/culture", label: "Cultura" },
+    { href: "/careers", label: "Carreiras" },
+    { href: "/contact", label: "Contato" },
 ];
 
 export function Navigation() {
