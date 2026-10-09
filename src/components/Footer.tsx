@@ -56,10 +56,10 @@ export function Footer() {
                         </p>
 
                         <div>
-                            <a 
+                            <a
                                 href="mailto:contact@aurorameridian.com.br"
                                 className={[
-                                    "block text-text-secondary",
+                                    "block text-sm text-text-secondary",
                                     "transition-colors duration-fast ease-standard",
                                     "hover:text-text-primary",
                                     "focus-visible:outline-2",
@@ -70,10 +70,10 @@ export function Footer() {
                                 contact@aurorameridian.com.br
                             </a>
 
-                            <a 
+                            <a
                                 href="tel:+551130427280"
                                 className={[
-                                    "block text-text-secondary",
+                                    "mt-2 block text-sm text-text-secondary",
                                     "transition-colors duration-fast ease-standard",
                                     "hover:text-text-primary",
                                     "focus-visible:outline-2",
@@ -87,7 +87,7 @@ export function Footer() {
                             <Link
                                 href={CTA_HREF}
                                 className={[
-                                    "inline-flex pt-2 text-text-primary",
+                                    "inline-flex pt-3 text-sm text-text-primary",
                                     "transition-colors duration-fast ease-standard",
                                     "hover:text-text-secondary",
                                     "focus-visible:outline-2",
@@ -98,6 +98,26 @@ export function Footer() {
                                 Solicitar acesso →
                             </Link>
                         </div>
+                    </div>
+
+                    <div>
+                        <p className="text-xs font-medium uppercase tracking-wider text-text-secondary">
+                            Legal & Trust
+                        </p>
+
+                        <Link 
+                            href="/legal"
+                                className={[
+                                    "mt-4 inline-flex text-sm text-text-secondary",
+                                    "transition-colors duration-fast ease-standard",
+                                    "hover:text-text-primary",
+                                    "focus-visible:outline-2",
+                                    "focus-visible:outline-offset-3",
+                                    "focus-visible:outline-focus",
+                                ].join(" ")}
+                        >
+                            Políticas e disclosures →
+                        </Link>
                     </div>
                 </div>
 
